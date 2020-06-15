@@ -1,0 +1,19 @@
+html {
+  background-color: #f6debc;
+}
+
+@font-face {
+  font-family: "Montserrat Medium";
+  src: url("../../fonts/montserrat-medium/MontserratMedium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Montserrat Semibold";
+  src: url("../../fonts/montserrat-semibold/MontserratSemiBold.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Avenir Light";
+  src: url("../../fonts/avenir-light/AvenirLight.woff") format("woff");
+}
