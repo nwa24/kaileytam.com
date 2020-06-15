@@ -67,6 +67,7 @@ const Navbox = styled.div`
   height: 100%;
   justify-content: flex-end;
   align-items: center;
+  margin-top: 15px;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -117,7 +118,7 @@ const HeaderTitle = styled.h1`
   text-transform: lowercase;
   margin-top: 18px;
   color: #2c422f;
-  font-size: 30px;
+  font-size: 50px;
   font-family: "Montserrat Medium";
   letter-spacing: 1px;
 `
