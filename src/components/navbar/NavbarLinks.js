@@ -11,6 +11,7 @@ const NavItem = styled(Link)`
   margin: 0 1vw;
   position: relative;
   font-family: "Montserrat Semibold";
+  letter-spacing: 2px;
 
   :after {
     position: absolute;

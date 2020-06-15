@@ -119,6 +119,7 @@ const HeaderTitle = styled.h1`
   color: #2c422f;
   font-size: 30px;
   font-family: "Montserrat Medium";
+  letter-spacing: 1px;
 `
 
 const Navbar = () => {
