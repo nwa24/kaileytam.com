@@ -2,18 +2,7 @@ import React from "react"
 import Navbar from "../components/navbar/Navbar"
 import styled from "styled-components"
 import HeadShot from "../images/headshot2.jpeg"
-
-const DescriptionHeader = styled.h1`
-  font-family: "Montserrat Medium";
-  color: #2c422f;
-  font-size: 30px;
-`
-
-const DescriptionText = styled.p`
-  font-family: "Avenir Light";
-  font-size: 18px;
-  color: #000000;
-`
+import Avatar from "../images/kailey-avatar.png"
 
 const ImagePlaceholder = styled.div`
   position: absolute;
@@ -41,6 +30,29 @@ const LineBreak = styled.hr`
   border-width: 1px;
 `
 
+const DescriptionHeader = styled.h1`
+  font-family: "Montserrat Medium";
+  color: #2c422f;
+  font-size: 30px;
+  float: left;
+  position: relative;
+`
+
+const DescriptionText = styled.p`
+  font-family: "Avenir Light";
+  font-size: 18px;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  margin-top: 15vh;
+`
+
+const AvatarImg = styled.img`
+  float: right;
+  margin-left: 18vw;
+`
+
 const contact = () => {
   return (
     <>
@@ -50,6 +62,7 @@ const contact = () => {
       </ImagePlaceholder>
       <Description>
         <DescriptionHeader>Hi friends,</DescriptionHeader>
+        <AvatarImg src={Avatar} alt="avatar" />
         <DescriptionText>
           My name is Kailey and welcome to my blog. I write poetry and
           occasionally copywrite for other people. On this blog, you’ll find

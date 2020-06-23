@@ -1,5 +1,6 @@
 html {
   background-color: #f6debc;
+  overflow-y: overlay;
 }
 
 @font-face {
