@@ -120,6 +120,11 @@ const HeaderTitle = styled.h1`
   font-size: 50px;
   font-family: "Montserrat Medium";
   letter-spacing: 1px;
+
+  @media (max-width: 760px) {
+    font-size: 40px;
+    margin-top: 10px;
+  }
 `
 
 const Navbar = () => {

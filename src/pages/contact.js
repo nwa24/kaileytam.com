@@ -22,7 +22,7 @@ const DescriptionText = styled.p`
 `
 
 const HeadShotCol = styled(Col)`
-  @media (min-width: 768px) {
+  @media (min-width: 770px) {
     height: 200px;
   }
 `
