@@ -6,6 +6,7 @@ import Avatar from "../images/kailey-avatar.png"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Container, Row, Col, Image } from "react-bootstrap"
 import ContactForm from "../components/contact/ContactForm"
+import Helmet from "react-helmet"
 
 const DescriptionHeader = styled.h1`
   font-family: "Montserrat Medium";
@@ -32,6 +33,9 @@ const HeadShotCol = styled(Col)`
 const contact = () => {
   return (
     <>
+      <Helmet>
+        <title>Kailey Tam - Contact</title>
+      </Helmet>
       <Navbar />
       <Container
         fluid
