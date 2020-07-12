@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import { Container, Row, Col, Image } from "react-bootstrap"
 import ContactForm from "../components/contact/ContactForm"
 import Helmet from "react-helmet"
+import { Row as Row1, Col as Col1 } from "antd"
 
 const DescriptionHeader = styled.h1`
   font-family: "Montserrat Medium";
@@ -83,6 +84,11 @@ const contact = () => {
           </Col>
         </Row>
         <Row></Row>
+        <Row1 justify="center">
+          <Col1>
+            <h1 className="contact-form-header">Get In Touch</h1>
+          </Col1>
+        </Row1>
         <Row style={{ paddingBottom: "20px" }}>
           <Col>
             <ContactForm />

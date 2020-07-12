@@ -1,0 +1,24 @@
+.form-control {
+  background-color: #e5decf;
+  font-family: "Avenir Light";
+  border: none;
+  resize: none;
+}
+
+.form-control::placeholder {
+  color: #97af97;
+}
+
+.form-control:focus {
+  background-color: #e5decf;
+  box-shadow: none;
+  border: none;
+}
+
+.contact-form-header {
+  font-family: "Montserrat Semibold";
+  text-transform: uppercase;
+  color: #ca5743;
+  letter-spacing: 5px;
+  font-size: 30px;
+}
