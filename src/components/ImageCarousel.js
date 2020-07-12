@@ -7,16 +7,7 @@ import testimage from "../images/coming-soon.png"
 const ImageCarousel = () => {
   return (
     <>
-      <Carousel
-        style={{
-          width: "1200px",
-          height: "480px",
-          position: "fixed",
-          left: "50%",
-          top: "15vh",
-          transform: "translate(-50%)",
-        }}
-      >
+      <Carousel>
         <Carousel.Item>
           <img src={testimage} alt="slide1" />
         </Carousel.Item>
