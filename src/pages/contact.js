@@ -5,6 +5,7 @@ import HeadShot from "../images/headshot2.jpeg"
 import Avatar from "../images/kailey-avatar.png"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Container, Row, Col, Image } from "react-bootstrap"
+import ContactForm from "../components/contact/ContactForm"
 
 const DescriptionHeader = styled.h1`
   font-family: "Montserrat Medium";
@@ -34,9 +35,12 @@ const contact = () => {
       <Navbar />
       <Container
         fluid
-        style={{ backgroundColor: "#f6debc", paddingTop: "50px" }}
+        style={{
+          backgroundColor: "#f6debc",
+          paddingTop: "50px",
+        }}
       >
-        <Row>
+        <Row style={{ height: "1200px" }}>
           <HeadShotCol lg={{ span: 5, offset: 1 }} style={{ padding: "0px" }}>
             <div style={{ width: "auto", height: "auto" }}>
               <Image
@@ -72,6 +76,12 @@ const contact = () => {
                 </DescriptionText>
               </Col>
             </Row>
+          </Col>
+        </Row>
+        <Row></Row>
+        <Row style={{ paddingBottom: "20px" }}>
+          <Col>
+            <ContactForm />
           </Col>
         </Row>
       </Container>
