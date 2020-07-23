@@ -5,10 +5,11 @@ import ImageCarousel from "../components/ImageCarousel"
 import Helmet from "react-helmet"
 import { Row, Col } from "antd"
 import Img from "gatsby-image/withIEPolyfill"
+import LineBreak from "../components/LineBreak"
 
 const IndexPage = props => {
   return (
-    <>
+    <div style={{ backgroundColor: "f6debc" }}>
       <Helmet>
         <title>Kailey Tam</title>
       </Helmet>
@@ -16,17 +17,26 @@ const IndexPage = props => {
       <Row
         gutter={[16, 100]}
         justify="center"
-        style={{ backgroundColor: "#f6debc", paddingTop: "60px" }}
+        style={{
+          backgroundColor: "#f6debc",
+          paddingTop: "60px",
+          marginBottom: "0px",
+        }}
       >
         <Col>
           <ImageCarousel />
+        </Col>
+      </Row>
+      <Row justify="center" style={{ backgroundColor: "f6debc" }}>
+        <Col>
+          <LineBreak />
         </Col>
       </Row>
       <Row
         gutter={[48, 100]}
         justify="center"
         align="middle"
-        style={{ backgroundColor: "#f6debc" }}
+        style={{ backgroundColor: "#f6debc", paddingTop: "50px" }}
       >
         <Col lg={8} xs={24}>
           <Img
@@ -66,7 +76,7 @@ const IndexPage = props => {
           </p>
         </Col>
       </Row>
-    </>
+    </div>
   )
 }
 

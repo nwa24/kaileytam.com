@@ -6,6 +6,7 @@ import Helmet from "react-helmet"
 import { Row, Col } from "antd"
 import { graphql } from "gatsby"
 import Img from "gatsby-image/withIEPolyfill"
+import LineBreak from "../components/LineBreak"
 
 // Row = 12 cols or 100%
 const contact = props => {
@@ -60,9 +61,14 @@ const contact = props => {
           </Row>
         </Col>
       </Row>
+      <LineBreak />
       <Row
         justify="center"
-        style={{ paddingBottom: "10px", backgroundColor: "#f6debc" }}
+        style={{
+          paddingBottom: "10px",
+          backgroundColor: "#f6debc",
+          paddingTop: "50px",
+        }}
       >
         <Col>
           <h1 className="contact-form-header">Get In Touch</h1>
