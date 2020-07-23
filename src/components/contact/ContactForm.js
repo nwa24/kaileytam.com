@@ -56,7 +56,7 @@ const ContactForm = () => {
                 <Form.Control
                   required
                   as="textarea"
-                  rows="3"
+                  rows="5"
                   placeholder="Comments..."
                   name="comments"
                 />

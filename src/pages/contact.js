@@ -1,74 +1,50 @@
 import React from "react"
 import Navbar from "../components/navbar/Navbar"
-import styled from "styled-components"
-import HeadShot from "../images/headshot2.jpeg"
-import Avatar from "../images/kailey-avatar.png"
 import "bootstrap/dist/css/bootstrap.min.css"
-import { Container, Row, Col, Image } from "react-bootstrap"
 import ContactForm from "../components/contact/ContactForm"
 import Helmet from "react-helmet"
-import { Row as Row1, Col as Col1 } from "antd"
-
-const DescriptionHeader = styled.h1`
-  font-family: "Montserrat Medium";
-  color: #2c422f;
-  font-size: 30px;
-  float: left;
-  position: relative;
-`
-
-const DescriptionText = styled.p`
-  font-family: "Avenir Light";
-  font-size: 18px;
-  color: #000000;
-  margin-top: 25px;
-`
-
-const HeadShotCol = styled(Col)`
-  @media (min-width: 770px) {
-    height: 200px;
-  }
-`
+import { Row, Col } from "antd"
+import { graphql } from "gatsby"
+import Img from "gatsby-image/withIEPolyfill"
 
 // Row = 12 cols or 100%
-const contact = () => {
+const contact = props => {
   return (
-    <>
+    <div style={{ backgroundColor: "#f6debc" }}>
       <Helmet>
         <title>Kailey Tam - Contact</title>
       </Helmet>
       <Navbar />
-      <Container
-        fluid
-        style={{
-          backgroundColor: "#f6debc",
-          paddingTop: "50px",
-        }}
+      <Row
+        justify="center"
+        align="middle"
+        gutter={[64, 64]}
+        style={{ backgroundColor: "#f6debc", paddingTop: "60px" }}
       >
-        <Row style={{ height: "1200px" }}>
-          <HeadShotCol lg={{ span: 5, offset: 1 }} style={{ padding: "0px" }}>
-            <div style={{ width: "auto", height: "auto" }}>
-              <Image
-                src={HeadShot}
-                alt="headshot"
-                className="img-responsive"
-                fluid
-                rounded
+        <Col lg={8} xs={24}>
+          <Img
+            fluid={props.data.headshot.childImageSharp.fluid}
+            objectFit="cover"
+            alt="headshot"
+          />
+        </Col>
+        <Col lg={8} xs={24}>
+          <Row justify="start" align="middle" gutter={[0, 48]}>
+            <Col lg={16} xs={20}>
+              <h2 style={{ fontFamily: "Avenir Light", color: "#2c422f" }}>
+                Hi friends,
+              </h2>
+            </Col>
+            <Col lg={6} xs={4}>
+              <Img
+                fluid={props.data.avatar.childImageSharp.fluid}
+                objectFit="cover"
+                alt="avatar"
               />
-            </div>
-          </HeadShotCol>
-          <Col lg={{ span: 6 }} style={{ paddingLeft: "50px" }}>
-            <Row>
-              <Col lg={{ span: 6 }}>
-                <DescriptionHeader>Hi friends,</DescriptionHeader>
-              </Col>
-              <Col lg={{ span: 6 }}>
-                <Image src={Avatar} alt="avatar" fluid />
-              </Col>
-            </Row>
-            <Row>
-              <Col lg={{ span: 8 }}>
-                <DescriptionText>
+            </Col>
+            <Row justify="start" style={{ backgroundColor: "#f6debc" }}>
+              <Col lg={24} xs={24}>
+                <p style={{ fontFamily: "Avenir Light", color: "#000000" }}>
                   My name is Kailey and welcome to my blog. I write poetry and
                   occasionally copywrite for other people. On this blog, you’ll
                   find line-by-line analyses of my poems, the behind-the-scenes
@@ -78,25 +54,51 @@ const contact = () => {
                   copyright and all. I’m so excited for you to see not only my
                   work, but the process behind it. Thank you for all your
                   support and enjoy!
-                </DescriptionText>
+                </p>
               </Col>
             </Row>
-          </Col>
-        </Row>
-        <Row></Row>
-        <Row1 justify="center" style={{ paddingBottom: "10px" }}>
-          <Col1>
-            <h1 className="contact-form-header">Get In Touch</h1>
-          </Col1>
-        </Row1>
-        <Row style={{ paddingBottom: "20px" }}>
-          <Col>
-            <ContactForm />
-          </Col>
-        </Row>
-      </Container>
-    </>
+          </Row>
+        </Col>
+      </Row>
+      <Row
+        justify="center"
+        style={{ paddingBottom: "10px", backgroundColor: "#f6debc" }}
+      >
+        <Col>
+          <h1 className="contact-form-header">Get In Touch</h1>
+        </Col>
+      </Row>
+      <Row
+        justify="center"
+        style={{ paddingBottom: "20px", backgroundColor: "#f6debc" }}
+      >
+        <Col span={24}>
+          <ContactForm />
+        </Col>
+      </Row>
+    </div>
   )
 }
 
 export default contact
+
+export const fluidImage = graphql`
+  fragment fluidImage on File {
+    childImageSharp {
+      fluid(maxWidth: 1000) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+`
+
+export const pageQuery = graphql`
+  query {
+    headshot: file(relativePath: { eq: "headshot2.jpeg" }) {
+      ...fluidImage
+    }
+    avatar: file(relativePath: { eq: "kailey-avatar.png" }) {
+      ...fluidImage
+    }
+  }
+`
