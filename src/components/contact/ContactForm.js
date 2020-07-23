@@ -64,8 +64,8 @@ const ContactForm = () => {
             </Form.Row>
           </Col1>
         </Row>
-        <Row justify="center">
-          <Col1 span={12}>
+        <Row justify="center" align="center">
+          <Col1>
             <Button variant="primary" type="submit">
               Send
             </Button>

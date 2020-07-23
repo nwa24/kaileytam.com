@@ -84,7 +84,7 @@ const contact = () => {
           </Col>
         </Row>
         <Row></Row>
-        <Row1 justify="center">
+        <Row1 justify="center" style={{ paddingBottom: "10px" }}>
           <Col1>
             <h1 className="contact-form-header">Get In Touch</h1>
           </Col1>
