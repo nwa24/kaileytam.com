@@ -1,49 +1,50 @@
 import React from "react"
 import Navbar from "../components/navbar/Navbar"
-import { graphql } from "gatsby"
+import { graphql, navigate } from "gatsby"
 import Helmet from "react-helmet"
 import { Row, Col } from "antd"
 
 const blog = ({ data }) => {
-  console.log(data) // TESTING
-  const { title, date } = data.markdownRemark.frontmatter
-  const { html } = data.markdownRemark
-
   return (
     <>
       <Helmet>
         <title>Kailey Tam - Blog</title>
       </Helmet>
       <Navbar />
-      <Row>
-        <Col>
-          <h1>{title}</h1>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <h2>{date}</h2>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
-        </Col>
-      </Row>
+      <Row>{renderBlogs(data.allMarkdownRemark.edges)}</Row>
     </>
   )
+
+  function renderBlogs(posts) {
+    return posts.map(item => {
+      const { slug } = item.node.fields
+      const { title, date } = item.node.frontmatter
+      return (
+        <div onClick={() => navigate(`/blog/${slug}`)}>
+          <h4>{title}</h4>
+          <p>{date}</p>
+        </div>
+      )
+    })
+  }
 }
 
 export default blog
 
-export const IndexQuery = graphql`
-  query BlogQuery {
-    markdownRemark(fields: { slug: { eq: "example-blog-1" } }) {
-      frontmatter {
-        title
-        date
+export const blogQuery = graphql`
+  {
+    allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            title
+            date
+          }
+          fields {
+            slug
+          }
+        }
       }
-      html
     }
   }
 `
