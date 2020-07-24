@@ -1,6 +1,7 @@
 ---
 title: Behind the scenes - What I've learned
 date: 23/07/2020
+featuredImage: ../../src/images/coming_soon_image.jpg
 ---
 
 BEHIND THE SCENES: what I’ve learned

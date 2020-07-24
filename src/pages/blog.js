@@ -3,8 +3,10 @@ import Navbar from "../components/navbar/Navbar"
 import { graphql, navigate } from "gatsby"
 import Helmet from "react-helmet"
 import { Row, Col } from "antd"
+import Img from "gatsby-image"
 
 const blog = ({ data }) => {
+  console.log(data)
   return (
     <>
       <Helmet>
@@ -18,11 +20,12 @@ const blog = ({ data }) => {
   function renderBlogs(posts) {
     return posts.map(item => {
       const { slug } = item.node.fields
-      const { title, date } = item.node.frontmatter
+      const { title, date, featuredImage } = item.node.frontmatter
       return (
         <div onClick={() => navigate(`/blog/${slug}`)}>
           <h4>{title}</h4>
           <p>{date}</p>
+          <Img fixed={featuredImage.childImageSharp.fixed} />
         </div>
       )
     })
@@ -39,6 +42,13 @@ export const blogQuery = graphql`
           frontmatter {
             title
             date
+            featuredImage {
+              childImageSharp {
+                fixed(width: 200) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
           fields {
             slug
