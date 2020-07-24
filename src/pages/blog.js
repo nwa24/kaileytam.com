@@ -5,7 +5,7 @@ import Helmet from "react-helmet"
 import { Row, Col } from "antd"
 
 const blog = ({ data }) => {
-  console.log(data)
+  console.log(data) // TESTING
   const { title, date } = data.markdownRemark.frontmatter
   const { html } = data.markdownRemark
 
