@@ -6,12 +6,14 @@
 
 // You can delete this file if you're not using it
 const { createFilePath } = require("gatsby-source-filesystem")
+const { fmImagesToRelative } = require("gatsby-remark-relative-images")
 const path = require("path")
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   let parentNode = getNode(node.parent)
+  fmImagesToRelative(node)
   if (node.internal.type === "MarkdownRemark") {
-    if (parentNode.sourceInstanceName === "blogs") {
+    if (parentNode.sourceInstanceName === "markdown-pages") {
       let slug = createFilePath({ node, getNode })
       slug = slug.replace(/\//g, "")
       actions.createNodeField({ node, name: "slug", value: slug })

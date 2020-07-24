@@ -1,8 +1,9 @@
 ---
 date: 24 07 2020
 title: "Testing Blog #1"
-image: /assets/109290589_3259613764058639_4491670598356025568_n.jpg
+featuredImage: /assets/109290589_3259613764058639_4491670598356025568_n.jpg
 ---
+
 # Hello World
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac porta elit. Nam dictum, purus at porttitor mollis, diam nibh feugiat tellus, nec mollis metus leo vitae nisl. Duis posuere dolor eu est dictum, vitae fringilla mi aliquam. Fusce finibus, nisi non bibendum imperdiet, nulla elit accumsan metus, sit amet scelerisque augue diam ac enim. Curabitur consequat, mi et facilisis iaculis, metus dolor cursus metus, quis vehicula arcu lorem quis risus. Nulla sit amet ornare diam. Proin porta odio nulla, in condimentum risus dictum non.
