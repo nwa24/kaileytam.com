@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: your Github username/ your repo name
+  repo: nwa24/ gatsby-kailey
 
 media_folder: static/assets
 public_folder: /assets
