@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: nwa24/ gatsby-kailey
+  repo: nwa24/gatsby-kailey
 
 media_folder: static/assets
 public_folder: /assets
