@@ -56,6 +56,7 @@ const blog = ({ data }) => {
                 display: "table-cell",
                 verticalAlign: "middle",
                 opacity: "0.5 !important",
+                cursor: "pointer",
               }}
               onClick={() => {
                 navigate(`/blog/${slug}`)
@@ -94,6 +95,7 @@ const blog = ({ data }) => {
                 backgroundColor: "#97af97",
                 display: "table-cell",
                 verticalAlign: "middle",
+                cursor: "pointer",
               }}
               onClick={() => {
                 navigate(`/blog/${slug}`)
