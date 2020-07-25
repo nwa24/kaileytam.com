@@ -25,9 +25,11 @@ It's interesting to see how our ideas for the book has transformed so much in so
 
 We spent hours dissecting each poem, talking about the kind of images/ideas I’d want to convey. I wanted to make sure the visual elements were more than a pretty image (as pretty as they are), but complementary and an additive to the verbal.
 
+
+
 ### *the design process*
 
-I speak as an outsider looking in. I can’t even imagine doing what Fyonna does on a daily basis, creating and designing and drawing on a trackpad. So, I asked Fyonna what the design process was like for her:
+I speak as an outsider looking in. I can’t even imagine doing what Fyonna does on a daily basis, creating and designing and drawing on a tablet. So, I asked Fyonna what the design process was like for her:
 
 K: What was the design process like for you?
 
@@ -41,7 +43,7 @@ K: What were some of the illustrations you found easier to draw?
 
 F: The honey one, or the one without a title.
 
-![image of the untitled poem, "I never want to be content..."](/assets/kai-s-book-1.jpg "poison honey")
+![image of the untitled poem, "I never want to be content..."]( "poison honey")
 
 K: We went through a few iterations for that one.
 
