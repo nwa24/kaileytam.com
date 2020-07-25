@@ -28,7 +28,12 @@ const blog = ({ data }) => {
       post.node.frontmatter.date = formattedDate
     })
 
-    return posts.map(item => {
+    // 2. Sort the posts by date so the latest is shown first
+    let sortedPosts = posts.sort((a, b) => {
+      return moment(a.node.frontmatter.date).diff(b.node.frontmatter.date)
+    })
+
+    return sortedPosts.map(item => {
       const { slug } = item.node.fields
       const { title, date, featuredImage } = item.node.frontmatter
       return (
