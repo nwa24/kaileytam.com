@@ -39,7 +39,7 @@ const IndexPage = props => {
         align="middle"
         style={{ paddingTop: "50px" }}
       >
-        <Col lg={8} xs={24}>
+        <Col lg={6} xs={24}>
           <Img
             fluid={props.data.comingSoon.childImageSharp.fluid}
             objectFit="cover"
@@ -106,7 +106,7 @@ export const fluidImage = graphql`
 
 export const pageQuery = graphql`
   query {
-    comingSoon: file(relativePath: { eq: "coming_soon_image.jpg" }) {
+    comingSoon: file(relativePath: { eq: "book-4.jpg" }) {
       ...fluidImage
     }
   }
