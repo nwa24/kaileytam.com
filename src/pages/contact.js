@@ -101,7 +101,7 @@ export const fluidImage = graphql`
 
 export const pageQuery = graphql`
   query {
-    headshot: file(relativePath: { eq: "headshot2.jpeg" }) {
+    headshot: file(relativePath: { eq: "contact-image.jpeg" }) {
       ...fluidImage
     }
     avatar: file(relativePath: { eq: "kailey-avatar.png" }) {
