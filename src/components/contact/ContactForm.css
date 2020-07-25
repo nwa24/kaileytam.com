@@ -11,6 +11,7 @@
 
 .form-control:focus {
   background-color: #e5decf;
+  color: #2c422f;
   box-shadow: none;
   border: none;
 }
