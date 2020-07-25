@@ -26,7 +26,9 @@ const blog = ({ data }) => {
           <div onClick={() => navigate(`/blog/${slug}`)}>
             <h4>{title}</h4>
             <p>{date}</p>
-            <Img fixed={featuredImage.childImageSharp.fixed} />
+            {featuredImage && (
+              <Img fixed={featuredImage.childImageSharp.fixed} />
+            )}
           </div>
         </Col>
       )
