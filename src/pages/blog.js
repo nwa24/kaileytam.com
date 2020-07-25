@@ -20,7 +20,7 @@ const blog = ({ data }) => {
       <Navbar />
       <div
         style={{
-          paddingTop: "60px",
+          paddingTop: "100px",
         }}
       >
         <Row gutter={[8, 48]}>{renderBlogs(data.allMarkdownRemark.edges)}</Row>

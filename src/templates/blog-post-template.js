@@ -20,7 +20,7 @@ const blogTemplate = ({ data }) => {
         <title>Kailey Tam - {title}</title>
       </Helmet>
       <Navbar />
-      <div style={{ paddingTop: "60px" }}>
+      <div style={{ paddingTop: "100px" }}>
         <Row align="middle" gutter={[8, 8]}>
           <Col span={18} offset={2}>
             <p

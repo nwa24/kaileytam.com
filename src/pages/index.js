@@ -22,7 +22,7 @@ const IndexPage = props => {
         gutter={[16, 100]}
         justify="center"
         style={{
-          paddingTop: "60px",
+          paddingTop: "100px",
           marginBottom: "0px",
         }}
       >

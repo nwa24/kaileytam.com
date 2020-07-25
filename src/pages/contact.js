@@ -24,7 +24,7 @@ const contact = props => {
         justify="center"
         align="middle"
         gutter={[64, 64]}
-        style={{ paddingTop: "60px" }}
+        style={{ paddingTop: "100px" }}
       >
         <Col lg={8} xs={24}>
           <Img

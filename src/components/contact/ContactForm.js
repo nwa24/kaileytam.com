@@ -12,6 +12,7 @@ const ContactForm = () => {
         data-netlify="true"
         data-netlify-honeypot="bot-field"
         onSubmit="submit"
+        action="thank-you"
       >
         <input type="hidden" name="form-name" value="contact" />
         {/* This is done to filter for spam submissions */}
@@ -66,14 +67,6 @@ const ContactForm = () => {
         </Row>
         <Row justify="center" align="center" style={{ paddingTop: "20px" }}>
           <Col1>
-            {/* <Button
-              className="custom-button"
-              shape="round"
-              size="large"
-              type="submit"
-            >
-              Submit
-            </Button> */}
             <Button
               className="custom-button"
               ariant="outline-primary"
