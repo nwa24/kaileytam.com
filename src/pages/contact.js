@@ -21,7 +21,7 @@ const contact = props => {
         justify="center"
         align="middle"
         gutter={[64, 64]}
-        style={{ backgroundColor: "#f7f3e9", paddingTop: "60px" }}
+        style={{ paddingTop: "60px" }}
       >
         <Col lg={8} xs={24}>
           <Img
@@ -44,7 +44,7 @@ const contact = props => {
                 alt="avatar"
               />
             </Col>
-            <Row justify="start" style={{ backgroundColor: "#f7f3e9" }}>
+            <Row justify="start">
               <Col lg={24} xs={24}>
                 <p style={{ fontFamily: "Avenir Light", color: "#000000" }}>
                   My name is Kailey and welcome to my blog. I write poetry and
@@ -67,7 +67,6 @@ const contact = props => {
         justify="center"
         style={{
           paddingBottom: "10px",
-          backgroundColor: "#f7f3e9",
           paddingTop: "50px",
         }}
       >
@@ -75,10 +74,7 @@ const contact = props => {
           <h1 className="contact-form-header">Get In Touch</h1>
         </Col>
       </Row>
-      <Row
-        justify="center"
-        style={{ paddingBottom: "20px", backgroundColor: "#f7f3e9" }}
-      >
+      <Row justify="center" style={{ paddingBottom: "20px" }}>
         <Col span={24}>
           <ContactForm />
         </Col>

@@ -10,9 +10,9 @@ import styled from "styled-components"
 
 const IndexPage = props => {
   return (
-    <div style={{ backgroundColor: "f6debc" }}>
+    <div>
       <Helmet>
-        <style>{"body { background-color: #f6debc }"}</style>
+        <style>{"body { background-color: #f7f3e9 }"}</style>
         <title>Kailey Tam</title>
       </Helmet>
       <Navbar />
@@ -20,7 +20,6 @@ const IndexPage = props => {
         gutter={[16, 100]}
         justify="center"
         style={{
-          backgroundColor: "#f6debc",
           paddingTop: "60px",
           marginBottom: "0px",
         }}
@@ -29,7 +28,7 @@ const IndexPage = props => {
           <ImageCarousel />
         </Col>
       </Row>
-      <Row justify="center" style={{ backgroundColor: "f6debc" }}>
+      <Row justify="center">
         <Col>
           <LineBreak width="350px" colour="#2c422f" />
         </Col>
@@ -38,7 +37,7 @@ const IndexPage = props => {
         gutter={[48, 100]}
         justify="center"
         align="middle"
-        style={{ backgroundColor: "#f6debc", paddingTop: "50px" }}
+        style={{ paddingTop: "50px" }}
       >
         <Col lg={8} xs={24}>
           <Img
