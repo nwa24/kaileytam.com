@@ -66,7 +66,12 @@ const ContactForm = () => {
         </Row>
         <Row justify="center" align="center" style={{ paddingTop: "20px" }}>
           <Col1>
-            <Button className="custom-button" shape="round" size="large">
+            <Button
+              className="custom-button"
+              shape="round"
+              size="large"
+              type="submit"
+            >
               Submit
             </Button>
           </Col1>

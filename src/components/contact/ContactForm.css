@@ -39,3 +39,13 @@
   background-color: #ca5743;
   color: white;
 }
+
+.custom-button:focus {
+  border-color: #ca5743;
+  font-family: "Montserrat Semibold";
+  text-transform: uppercase;
+  color: #ca5743;
+  letter-spacing: 2px;
+  background: none;
+  text-align: center;
+}
