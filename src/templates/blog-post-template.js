@@ -7,7 +7,6 @@ import { Row, Col } from "antd"
 import moment from "moment"
 
 const blogTemplate = ({ data }) => {
-  console.log(data)
   const { title, date, featuredImage } = data.post.frontmatter
   const { html } = data.post
 
@@ -20,44 +19,57 @@ const blogTemplate = ({ data }) => {
         <title>Kailey Tam - {title}</title>
       </Helmet>
       <Navbar />
-      <Row align="middle">
-        <Col span={18}>
-          <p>{title}</p>
-        </Col>
-        <Col span={2}>
-          <Img
-            fluid={data.avatar.childImageSharp.fluid}
-            objectFit="cover"
-            alt="avatar"
-          />
-        </Col>
-      </Row>
-      <Row>
-        <Col span={24}>
-          <p>Written by Kailey Tam</p>
-        </Col>
-      </Row>
-      <Row>
-        <Col span={24}>
-          <p>{formattedDate}</p>
-        </Col>
-      </Row>
-      {featuredImage && (
-        <Row>
-          <Col span={24}>
+      <div style={{ paddingTop: "60px" }}>
+        <Row align="middle" gutter={[8, 8]}>
+          <Col span={18} offset={2}>
+            <p
+              style={{
+                fontFamily: "Montserrat Medium",
+                fontSize: "40px",
+                marginBottom: "0px",
+              }}
+            >
+              {title}
+            </p>
+            <p
+              style={{
+                fontFamily: "Avenir Light",
+                color: "#ca5743",
+                marginBottom: "0px",
+              }}
+            >
+              Written by Kailey Tam
+            </p>
+            <p style={{ fontFamily: "Avenir Light" }}>{formattedDate}</p>
+          </Col>
+          <Col span={2}>
             <Img
-              fluid={featuredImage.childImageSharp.fluid}
+              fluid={data.avatar.childImageSharp.fluid}
               objectFit="cover"
-              alt="blogImage"
+              alt="avatar"
             />
           </Col>
         </Row>
-      )}
-      <Row>
-        <Col span={24}>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
-        </Col>
-      </Row>
+        {featuredImage && (
+          <Row justify="center" gutter={[8, 48]}>
+            <Col span={20}>
+              <Img
+                fluid={featuredImage.childImageSharp.fluid}
+                objectFit="cover"
+                alt="blogImage"
+              />
+            </Col>
+          </Row>
+        )}
+        <Row justify="center" gutter={[8, 48]}>
+          <Col span={20}>
+            <div
+              style={{ fontFamily: "Avenir Light", color: "#000000" }}
+              dangerouslySetInnerHTML={{ __html: html }}
+            />
+          </Col>
+        </Row>
+      </div>
     </>
   )
 }
@@ -72,7 +84,7 @@ export const blogTemplateQuery = graphql`
         date
         featuredImage {
           childImageSharp {
-            fluid(quality: 100, maxWidth: 1000) {
+            fluid(quality: 100, maxWidth: 1000, maxHeight: 500) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -82,7 +94,7 @@ export const blogTemplateQuery = graphql`
     }
     avatar: file(relativePath: { eq: "kailey-avatar.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1000) {
+        fluid(quality: 100, maxWidth: 1000) {
           ...GatsbyImageSharpFluid
         }
       }
