@@ -1,12 +1,12 @@
 import React from "react"
 
-const LineBreak = () => {
+const LineBreak = props => {
   return (
     <>
       <hr
         style={{
-          width: "350px",
-          border: "1px solid #2c422f",
+          width: `${props.width}`,
+          border: `1px solid ${props.colour}`,
         }}
       />
     </>

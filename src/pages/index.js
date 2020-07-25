@@ -11,6 +11,7 @@ const IndexPage = props => {
   return (
     <div style={{ backgroundColor: "f6debc" }}>
       <Helmet>
+        <style>{"body { background-color: #f6debc }"}</style>
         <title>Kailey Tam</title>
       </Helmet>
       <Navbar />
@@ -29,7 +30,7 @@ const IndexPage = props => {
       </Row>
       <Row justify="center" style={{ backgroundColor: "f6debc" }}>
         <Col>
-          <LineBreak />
+          <LineBreak width="350px" colour="#2c422f" />
         </Col>
       </Row>
       <Row

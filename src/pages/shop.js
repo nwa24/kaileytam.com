@@ -7,6 +7,7 @@ const shop = () => {
   return (
     <>
       <Helmet>
+        <style>{"body { background-color: #f6debc }"}</style>
         <title>Kailey Tam - Shop</title>
       </Helmet>
       <Navbar />

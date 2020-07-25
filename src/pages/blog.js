@@ -3,18 +3,27 @@ import Navbar from "../components/navbar/Navbar"
 import { graphql, navigate } from "gatsby"
 import Helmet from "react-helmet"
 import { Row, Col } from "antd"
-import Img from "gatsby-image"
-import { node } from "prop-types"
 import moment from "moment"
+import BackgroundImage from "gatsby-background-image"
+import LineBreak from "../components/LineBreak"
 
 const blog = ({ data }) => {
   return (
     <>
       <Helmet>
+        <style>{"body { background-color: #f6debc }"}</style>
         <title>Kailey Tam - Blog</title>
       </Helmet>
       <Navbar />
-      <Row>{renderBlogs(data.allMarkdownRemark.edges)}</Row>
+      <div
+        style={{
+          paddingLeft: "200px",
+          paddingRight: "200px",
+          paddingTop: "60px",
+        }}
+      >
+        <Row gutter={[16, 48]}>{renderBlogs(data.allMarkdownRemark.edges)}</Row>
+      </div>
     </>
   )
 
@@ -37,14 +46,85 @@ const blog = ({ data }) => {
       const { slug } = item.node.fields
       const { title, date, featuredImage } = item.node.frontmatter
       return (
-        <Col>
-          <div onClick={() => navigate(`/blog/${slug}`)}>
-            <h4>{title}</h4>
-            <p>{date}</p>
-            {featuredImage && (
-              <Img fixed={featuredImage.childImageSharp.fixed} />
-            )}
-          </div>
+        <Col span={8}>
+          {featuredImage ? (
+            <BackgroundImage
+              fluid={featuredImage.childImageSharp.fixed}
+              style={{
+                height: "300px",
+                width: "300px",
+                display: "table-cell",
+                verticalAlign: "middle",
+                opacity: "0.5 !important",
+              }}
+              onClick={() => {
+                navigate(`/blog/${slug}`)
+              }}
+            >
+              <p
+                style={{
+                  textTransform: "uppercase",
+                  color: "white",
+                  fontFamily: "Montserrat Semibold",
+                  letterSpacing: "2px",
+                  fontSize: "30px",
+                  textAlign: "center",
+                }}
+              >
+                {title}
+              </p>
+              <LineBreak width="60px" colour="white" />
+              <p
+                style={{
+                  textTransform: "uppercase",
+                  color: "white",
+                  fontFamily: "Montserrat Semibold",
+                  letterSpacing: "2px",
+                  textAlign: "center",
+                }}
+              >
+                {date}
+              </p>
+            </BackgroundImage>
+          ) : (
+            <div
+              style={{
+                height: "300px",
+                width: "300px",
+                backgroundColor: "#97af97",
+                display: "table-cell",
+                verticalAlign: "middle",
+              }}
+              onClick={() => {
+                navigate(`/blog/${slug}`)
+              }}
+            >
+              <p
+                style={{
+                  textTransform: "uppercase",
+                  color: "white",
+                  fontFamily: "Montserrat Semibold",
+                  letterSpacing: "2px",
+                  fontSize: "30px",
+                  textAlign: "center",
+                }}
+              >
+                {title}
+              </p>
+              <LineBreak width="60px" colour="white" />
+              <p
+                style={{
+                  textTransform: "uppercase",
+                  color: "white",
+                  fontFamily: "Montserrat Semibold",
+                  letterSpacing: "2px",
+                  textAlign: "center",
+                }}
+              >
+                {date}
+              </p>
+            </div>
+          )}
         </Col>
       )
     })
@@ -63,7 +143,7 @@ export const blogQuery = graphql`
             date
             featuredImage {
               childImageSharp {
-                fixed(width: 200) {
+                fixed(quality: 100, width: 300) {
                   ...GatsbyImageSharpFixed
                 }
               }

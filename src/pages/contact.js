@@ -13,6 +13,7 @@ const contact = props => {
   return (
     <div style={{ backgroundColor: "#f6debc" }}>
       <Helmet>
+        <style>{"body { background-color: #f6debc }"}</style>
         <title>Kailey Tam - Contact</title>
       </Helmet>
       <Navbar />
@@ -61,7 +62,7 @@ const contact = props => {
           </Row>
         </Col>
       </Row>
-      <LineBreak />
+      <LineBreak width="350px" colour="#2c422f" />
       <Row
         justify="center"
         style={{
