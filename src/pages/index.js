@@ -109,7 +109,7 @@ export const fluidImage = graphql`
 
 export const pageQuery = graphql`
   query {
-    comingSoon: file(relativePath: { eq: "book-4.jpg" }) {
+    comingSoon: file(relativePath: { eq: "open-book.jpg" }) {
       ...fluidImage
     }
   }

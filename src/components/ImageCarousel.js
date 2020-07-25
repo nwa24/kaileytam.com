@@ -2,6 +2,7 @@ import React from "react"
 import { Carousel } from "react-bootstrap"
 
 import testimage from "../images/coming-soon.png"
+import banner1 from "../images/intro-banner.jpg"
 
 // 1200 x 480
 const ImageCarousel = () => {
@@ -9,7 +10,7 @@ const ImageCarousel = () => {
     <>
       <Carousel>
         <Carousel.Item>
-          <img src={testimage} alt="slide1" />
+          <img src={banner1} alt="intro" />
         </Carousel.Item>
         <Carousel.Item>
           <img src={testimage} alt="slide2" />
