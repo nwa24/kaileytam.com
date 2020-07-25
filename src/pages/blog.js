@@ -20,7 +20,7 @@ const blog = ({ data }) => {
           paddingTop: "60px",
         }}
       >
-        <Row gutter={[16, 48]}>{renderBlogs(data.allMarkdownRemark.edges)}</Row>
+        <Row gutter={[0, 48]}>{renderBlogs(data.allMarkdownRemark.edges)}</Row>
       </div>
     </>
   )
@@ -68,6 +68,8 @@ const blog = ({ data }) => {
                   letterSpacing: "2px",
                   fontSize: "30px",
                   textAlign: "center",
+                  paddingLeft: "10px",
+                  paddingRight: "10px",
                 }}
               >
                 {title}
@@ -107,6 +109,8 @@ const blog = ({ data }) => {
                   letterSpacing: "2px",
                   fontSize: "30px",
                   textAlign: "center",
+                  paddingLeft: "10px",
+                  paddingRight: "10px",
                 }}
               >
                 {title}

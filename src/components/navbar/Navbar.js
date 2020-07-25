@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import NavbarLinks from "./NavbarLinks"
 import styled from "styled-components"
+import { navigate } from "gatsby"
 
 const Navigation = styled.nav`
   height: 8vh;
@@ -132,7 +133,13 @@ const Navbar = () => {
 
   return (
     <Navigation>
-      <HeaderTitle>kaileytam</HeaderTitle>
+      <HeaderTitle
+        onClick={() => {
+          navigate(`/`)
+        }}
+      >
+        kaileytam
+      </HeaderTitle>
       <Toggle
         navbarOpen={navbarOpen}
         onClick={() => setNavbarOpen(!navbarOpen)}

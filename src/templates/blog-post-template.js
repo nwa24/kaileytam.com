@@ -27,6 +27,7 @@ const blogTemplate = ({ data }) => {
                 fontFamily: "Montserrat Medium",
                 fontSize: "40px",
                 marginBottom: "0px",
+                letterSpacing: "2px",
               }}
             >
               {title}
@@ -42,7 +43,7 @@ const blogTemplate = ({ data }) => {
             </p>
             <p style={{ fontFamily: "Avenir Light" }}>{formattedDate}</p>
           </Col>
-          <Col span={2}>
+          <Col lg={2} xs={0}>
             <Img
               fluid={data.avatar.childImageSharp.fluid}
               objectFit="cover"
