@@ -31,8 +31,8 @@ const blog = ({ data }) => {
     // 1. Format the date so they are all in the format MM dd, YYYY
     posts.forEach(post => {
       // Need to add a day, the date stamp is always off by one day (Need to do some more investigation into this issue)
-      let formattedDate = moment(post.node.frontmatter.date)
-        .add(1, "day")
+      let formattedDate = moment
+        .utc(post.node.frontmatter.date)
         .format("MMM D, YYYY")
       post.node.frontmatter.date = formattedDate
     })
