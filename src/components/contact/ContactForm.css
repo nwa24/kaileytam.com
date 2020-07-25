@@ -24,7 +24,7 @@
   font-size: 30px;
 }
 
-.custom-button {
+/* .custom-button {
   font-family: "Montserrat Semibold";
   text-transform: uppercase;
   color: #ca5743;
@@ -48,4 +48,25 @@
   letter-spacing: 2px;
   background: none;
   text-align: center;
+} */
+
+.custom-button,
+.custom-button:active,
+.custom-button:focus {
+  font-family: "Montserrat Semibold";
+  text-transform: uppercase;
+  border-radius: 100px;
+  color: #ca5743;
+  letter-spacing: 2px;
+  background: none;
+  text-align: center;
+  border-color: #ca5743;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.custom-button:hover {
+  border-color: #ca5743;
+  background-color: #ca5743;
+  color: white;
 }

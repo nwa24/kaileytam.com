@@ -1,6 +1,6 @@
 import React from "react"
-import { Form, FormGroup, Col } from "react-bootstrap"
-import { Row, Col as Col1, Button } from "antd"
+import { Form, FormGroup, Col, Button } from "react-bootstrap"
+import { Row, Col as Col1 } from "antd"
 import "./ContactForm.css"
 
 const ContactForm = () => {
@@ -66,11 +66,19 @@ const ContactForm = () => {
         </Row>
         <Row justify="center" align="center" style={{ paddingTop: "20px" }}>
           <Col1>
-            <Button
+            {/* <Button
               className="custom-button"
               shape="round"
               size="large"
               type="submit"
+            >
+              Submit
+            </Button> */}
+            <Button
+              className="custom-button"
+              ariant="outline-primary"
+              type="submit"
+              size="lg"
             >
               Submit
             </Button>
