@@ -12,7 +12,9 @@ const IndexPage = props => {
   return (
     <div>
       <Helmet>
-        <style>{"body { background-color: #f7f3e9 }"}</style>
+        <style>
+          {"body { background-color: #f7f3e9; overflow-x: hidden }"}
+        </style>
         <title>Kailey Tam</title>
       </Helmet>
       <Navbar />
@@ -86,6 +88,16 @@ const IndexPage = props => {
               Get in contact now to order a book!
             </p>
           </a>
+        </Col>
+      </Row>
+      <Row
+        style={{ backgroundColor: "#e5decf", height: "100px" }}
+        justify="center"
+      >
+        <Col style={{ paddingTop: "40px" }}>
+          <p style={{ fontFamily: "Avenir Light", color: "#000000" }}>
+            &copy; Copyright Kailey Tam
+          </p>
         </Col>
       </Row>
     </div>

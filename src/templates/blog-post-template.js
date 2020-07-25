@@ -15,7 +15,7 @@ const blogTemplate = ({ data }) => {
   return (
     <>
       <Helmet>
-        <style>{"body { background-color: #f6debc }"}</style>
+        <style>{"body { background-color: #f7f3e9 }"}</style>
         <title>Kailey Tam - {title}</title>
       </Helmet>
       <Navbar />

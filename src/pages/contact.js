@@ -13,7 +13,9 @@ const contact = props => {
   return (
     <div>
       <Helmet>
-        <style>{"body { background-color: #f7f3e9 }"}</style>
+        <style>
+          {"body { background-color: #f7f3e9; overflow-x: hidden }"}
+        </style>
         <title>Kailey Tam - Contact</title>
       </Helmet>
       <Navbar />
