@@ -17,8 +17,6 @@ const blog = ({ data }) => {
       <Navbar />
       <div
         style={{
-          paddingLeft: "200px",
-          paddingRight: "200px",
           paddingTop: "60px",
         }}
       >
@@ -46,7 +44,7 @@ const blog = ({ data }) => {
       const { slug } = item.node.fields
       const { title, date, featuredImage } = item.node.frontmatter
       return (
-        <Col span={8}>
+        <Col lg={8} md={16} xs={24}>
           {featuredImage ? (
             <BackgroundImage
               fluid={featuredImage.childImageSharp.fixed}
