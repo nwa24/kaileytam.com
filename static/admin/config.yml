@@ -11,7 +11,7 @@ collections:
     folder: blog
     create: true
     fields:
-      - { name: date, label: Date, widget: date, format: "DD MM YYYY" }
+      - { name: date, label: Date, widget: date, format: "YYYY-MM-DD" }
       - { name: title, label: Title }
       - {
           name: featuredImage,

@@ -1,5 +1,5 @@
 ---
-date: 24 07 2020
+date: 2020-07-24
 title: "Testing Blog #1"
 featuredImage: /assets/109290589_3259613764058639_4491670598356025568_n.jpg
 ---

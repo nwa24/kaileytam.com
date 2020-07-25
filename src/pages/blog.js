@@ -4,9 +4,10 @@ import { graphql, navigate } from "gatsby"
 import Helmet from "react-helmet"
 import { Row, Col } from "antd"
 import Img from "gatsby-image"
+import { node } from "prop-types"
+import moment from "moment"
 
 const blog = ({ data }) => {
-  console.log(data)
   return (
     <>
       <Helmet>
@@ -18,6 +19,15 @@ const blog = ({ data }) => {
   )
 
   function renderBlogs(posts) {
+    // 1. Format the date so they are all in the format MM dd, YYYY
+    posts.forEach(post => {
+      // Need to add a day, the date stamp is always off by one day (Need to do some more investigation into this issue)
+      let formattedDate = moment(post.node.frontmatter.date)
+        .add(1, "day")
+        .format("MMM D, YYYY")
+      post.node.frontmatter.date = formattedDate
+    })
+
     return posts.map(item => {
       const { slug } = item.node.fields
       const { title, date, featuredImage } = item.node.frontmatter
