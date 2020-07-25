@@ -23,3 +23,19 @@
   letter-spacing: 5px;
   font-size: 30px;
 }
+
+.custom-button {
+  font-family: "Montserrat Semibold";
+  text-transform: uppercase;
+  color: #ca5743;
+  letter-spacing: 2px;
+  background: none;
+  text-align: center;
+  border-color: #ca5743;
+}
+
+.custom-button:hover {
+  border-color: #ca5743;
+  background-color: #ca5743;
+  color: white;
+}
