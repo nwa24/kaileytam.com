@@ -22,11 +22,13 @@ const blog = ({ data }) => {
       const { slug } = item.node.fields
       const { title, date, featuredImage } = item.node.frontmatter
       return (
-        <div onClick={() => navigate(`/blog/${slug}`)}>
-          <h4>{title}</h4>
-          <p>{date}</p>
-          <Img fixed={featuredImage.childImageSharp.fixed} />
-        </div>
+        <Col>
+          <div onClick={() => navigate(`/blog/${slug}`)}>
+            <h4>{title}</h4>
+            <p>{date}</p>
+            <Img fixed={featuredImage.childImageSharp.fixed} />
+          </div>
+        </Col>
       )
     })
   }

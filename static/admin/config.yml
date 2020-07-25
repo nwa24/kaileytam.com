@@ -13,5 +13,10 @@ collections:
     fields:
       - { name: date, label: Date, widget: date, format: "DD MM YYYY" }
       - { name: title, label: Title }
-      - { name: featuredImage, label: Featured Image, widget: image }
+      - {
+          name: featuredImage,
+          label: Featured Image,
+          widget: image,
+          required: false,
+        }
       - { name: body, label: Body, widget: markdown }
