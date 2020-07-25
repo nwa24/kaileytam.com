@@ -1,12 +1,18 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Img from "gatsby-image/withIEPolyfill"
 
 const blogTemplate = ({ data }) => {
-  const { title, date } = data.markdownRemark.frontmatter
+  const { title, date, featuredImage } = data.markdownRemark.frontmatter
   const { html } = data.markdownRemark
 
   return (
     <div>
+      <Img
+        fluid={featuredImage.childImageSharp.fluid}
+        objectFi="cover"
+        alt="blogImage"
+      />
       <h1>{title}</h1>
       <h2>{date}</h2>
       <div dangerouslySetInnerHTML={{ __html: html }} />
@@ -22,6 +28,13 @@ export const blogTemplateQuery = graphql`
       frontmatter {
         title
         date
+        featuredImage {
+          childImageSharp {
+            fluid(quality: 100, maxWidth: 1000) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
       html
     }
