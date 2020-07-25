@@ -11,9 +11,9 @@ import LineBreak from "../components/LineBreak"
 // Row = 12 cols or 100%
 const contact = props => {
   return (
-    <div style={{ backgroundColor: "#f6debc" }}>
+    <div>
       <Helmet>
-        <style>{"body { background-color: #f6debc }"}</style>
+        <style>{"body { background-color: #f7f3e9 }"}</style>
         <title>Kailey Tam - Contact</title>
       </Helmet>
       <Navbar />
@@ -21,7 +21,7 @@ const contact = props => {
         justify="center"
         align="middle"
         gutter={[64, 64]}
-        style={{ backgroundColor: "#f6debc", paddingTop: "60px" }}
+        style={{ backgroundColor: "#f7f3e9", paddingTop: "60px" }}
       >
         <Col lg={8} xs={24}>
           <Img
@@ -44,7 +44,7 @@ const contact = props => {
                 alt="avatar"
               />
             </Col>
-            <Row justify="start" style={{ backgroundColor: "#f6debc" }}>
+            <Row justify="start" style={{ backgroundColor: "#f7f3e9" }}>
               <Col lg={24} xs={24}>
                 <p style={{ fontFamily: "Avenir Light", color: "#000000" }}>
                   My name is Kailey and welcome to my blog. I write poetry and
@@ -67,7 +67,7 @@ const contact = props => {
         justify="center"
         style={{
           paddingBottom: "10px",
-          backgroundColor: "#f6debc",
+          backgroundColor: "#f7f3e9",
           paddingTop: "50px",
         }}
       >
@@ -77,7 +77,7 @@ const contact = props => {
       </Row>
       <Row
         justify="center"
-        style={{ paddingBottom: "20px", backgroundColor: "#f6debc" }}
+        style={{ paddingBottom: "20px", backgroundColor: "#f7f3e9" }}
       >
         <Col span={24}>
           <ContactForm />

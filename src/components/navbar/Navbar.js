@@ -6,7 +6,7 @@ import { navigate } from "gatsby"
 const Navigation = styled.nav`
   height: 8vh;
   display: flex;
-  background-color: #f6debc;
+  background-color: #f7f3e9;
   position: relative;
   justify-content: space-between;
   text-transform: uppercase;

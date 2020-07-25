@@ -6,6 +6,7 @@ import Helmet from "react-helmet"
 import { Row, Col } from "antd"
 import Img from "gatsby-image/withIEPolyfill"
 import LineBreak from "../components/LineBreak"
+import styled from "styled-components"
 
 const IndexPage = props => {
   return (
@@ -75,6 +76,17 @@ const IndexPage = props => {
             competition, but a demonstration of listening, rapport, and
             compassion.
           </p>
+          <a href="https://www.kaileytam.com/contact">
+            <p
+              style={{
+                fontFamily: "Avenir Light",
+                fontSize: "16px",
+                color: "#ca5743",
+              }}
+            >
+              Get in contact now to order a book!
+            </p>
+          </a>
         </Col>
       </Row>
     </div>
