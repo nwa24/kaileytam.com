@@ -30,7 +30,7 @@ const IndexPage = props => {
       </Row>
       <Row justify="center">
         <Col>
-          <LineBreak width="350px" colour="#2c422f" />
+          <LineBreak width="350px" colour="#e5decf" />
         </Col>
       </Row>
       <Row

@@ -62,7 +62,7 @@ const contact = props => {
           </Row>
         </Col>
       </Row>
-      <LineBreak width="350px" colour="#2c422f" />
+      <LineBreak width="350px" colour="#e5decf" />
       <Row
         justify="center"
         style={{
