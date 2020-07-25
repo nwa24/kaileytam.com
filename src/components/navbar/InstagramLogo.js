@@ -6,6 +6,7 @@ const InstagramLogo = () => {
     <a
       href="https://www.instagram.com/wordsbykailey/"
       className="instagramLogo"
+      style={{ paddingBottom: "5px" }}
     >
       <img src={InstagramIcon} alt="logo" />
     </a>
