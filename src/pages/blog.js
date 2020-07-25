@@ -6,10 +6,11 @@ import { Row, Col } from "antd"
 import moment from "moment"
 import BackgroundImage from "gatsby-background-image"
 import LineBreak from "../components/LineBreak"
+import Footer from "../components/footer"
 
 const blog = ({ data }) => {
   return (
-    <>
+    <div>
       <Helmet>
         <style>
           {"body { background-color: #f7f3e9; overflow-x: hidden }"}
@@ -24,7 +25,8 @@ const blog = ({ data }) => {
       >
         <Row gutter={[8, 48]}>{renderBlogs(data.allMarkdownRemark.edges)}</Row>
       </div>
-    </>
+      <Footer />
+    </div>
   )
 
   function renderBlogs(posts) {

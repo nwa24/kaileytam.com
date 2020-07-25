@@ -7,6 +7,7 @@ import { Row, Col } from "antd"
 import { graphql } from "gatsby"
 import Img from "gatsby-image/withIEPolyfill"
 import LineBreak from "../components/LineBreak"
+import Footer from "../components/footer"
 
 // Row = 12 cols or 100%
 const contact = props => {
@@ -81,6 +82,7 @@ const contact = props => {
           <ContactForm />
         </Col>
       </Row>
+      <Footer />
     </div>
   )
 }

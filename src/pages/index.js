@@ -6,7 +6,7 @@ import Helmet from "react-helmet"
 import { Row, Col } from "antd"
 import Img from "gatsby-image/withIEPolyfill"
 import LineBreak from "../components/LineBreak"
-import styled from "styled-components"
+import Footer from "../components/footer"
 
 const IndexPage = props => {
   return (
@@ -90,16 +90,7 @@ const IndexPage = props => {
           </a>
         </Col>
       </Row>
-      <Row
-        style={{ backgroundColor: "#e5decf", height: "100px" }}
-        justify="center"
-      >
-        <Col style={{ paddingTop: "40px" }}>
-          <p style={{ fontFamily: "Avenir Light", color: "#000000" }}>
-            &copy; Copyright Kailey Tam
-          </p>
-        </Col>
-      </Row>
+      <Footer style={{ paddingTop: "60px" }} />
     </div>
   )
 }

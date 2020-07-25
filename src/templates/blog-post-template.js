@@ -5,6 +5,7 @@ import Helmet from "react-helmet"
 import Navbar from "../components/navbar/Navbar"
 import { Row, Col } from "antd"
 import moment from "moment"
+import Footer from "../components/footer"
 
 const blogTemplate = ({ data }) => {
   const { title, date, featuredImage } = data.post.frontmatter
@@ -71,6 +72,7 @@ const blogTemplate = ({ data }) => {
           </Col>
         </Row>
       </div>
+      <Footer />
     </>
   )
 }
