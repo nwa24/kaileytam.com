@@ -7,8 +7,9 @@ import { Row, Col } from "antd"
 import moment from "moment"
 
 const blogTemplate = ({ data }) => {
-  const { title, date, featuredImage } = data.markdownRemark.frontmatter
-  const { html } = data.markdownRemark
+  console.log(data)
+  const { title, date, featuredImage } = data.post.frontmatter
+  const { html } = data.post
 
   let formattedDate = moment.utc(date).format("DD/MMM/YYYY")
 
@@ -19,9 +20,16 @@ const blogTemplate = ({ data }) => {
         <title>Kailey Tam - {title}</title>
       </Helmet>
       <Navbar />
-      <Row>
-        <Col span={24}>
+      <Row align="middle">
+        <Col span={18}>
           <p>{title}</p>
+        </Col>
+        <Col span={2}>
+          <Img
+            fluid={data.avatar.childImageSharp.fluid}
+            objectFit="cover"
+            alt="avatar"
+          />
         </Col>
       </Row>
       <Row>
@@ -34,18 +42,22 @@ const blogTemplate = ({ data }) => {
           <p>{formattedDate}</p>
         </Col>
       </Row>
-      {/* <div>
-        {featuredImage && (
-          <Img
-            fluid={featuredImage.childImageSharp.fluid}
-            objectFi="cover"
-            alt="blogImage"
-          />
-        )}
-        <h1>{title}</h1>
-        <h2>{date}</h2>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
-      </div> */}
+      {featuredImage && (
+        <Row>
+          <Col span={24}>
+            <Img
+              fluid={featuredImage.childImageSharp.fluid}
+              objectFit="cover"
+              alt="blogImage"
+            />
+          </Col>
+        </Row>
+      )}
+      <Row>
+        <Col span={24}>
+          <div dangerouslySetInnerHTML={{ __html: html }} />
+        </Col>
+      </Row>
     </>
   )
 }
@@ -53,8 +65,8 @@ const blogTemplate = ({ data }) => {
 export default blogTemplate
 
 export const blogTemplateQuery = graphql`
-  query BlogPageQuery($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+  query($slug: String!) {
+    post: markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         title
         date
@@ -67,6 +79,13 @@ export const blogTemplateQuery = graphql`
         }
       }
       html
+    }
+    avatar: file(relativePath: { eq: "kailey-avatar.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
     }
   }
 `
