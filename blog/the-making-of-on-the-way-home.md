@@ -1,7 +1,7 @@
 ---
 date: 2020-07-25
 title: the making of on the way home
-featuredImage: /assets/kai-s-book-1.jpg
+featuredImage: ""
 ---
 I suppose I should bring it back to the beginning. A friend of mine got me a mug for my birthday—which arrived a few months after my birthday—and just so happened to be the same mug that he had already gotten for his girlfriend. I mean, I’m still grateful for the mug, of course, but Fyonna and I understandably poked fun at the gift.
 
@@ -11,11 +11,12 @@ I’m the type of person that can’t stand surprises (I look up the ending of m
 
 It was going to be a small-scale project, a compilation of a few of my poems into a book she’d print out at school (Emily Carr School of Art and Design).
 
-Then March hit, and with March, the shutdown of the city. Quarantine meant the halt of school, work, friends—I spent my entire day at home, going stir-crazy and restless at my lack of productivity. (Not that productivity should be idolized or anything. I have a problem with rest so maybe that was a good thing.)
+Then March hit, and with March, the shutdown of the city. Quarantine meant the halt of school, work, friends—I spent my entire day at home, going stir-crazy and restless at my lack of productivity. (Not that productivity should be idolized or anything. I have a problem with rest so maybe that was a good thing).
 
 In this restlessness, I was reminded of the book Fyonna had drafted up, but the idea grew bigger—what if it was a full-scale book, copyright and everything? Fyonna, in her inability to say no to me, agreed.
 <br/>
 <br/>
+
 ### <span style="color:#ca5743"> *the first steps* </span>
 
 The first step was choosing which poems would make the cut and how I would structure them. It came as a no-brainer to do this first book about the journey so far, but I thought it was important that the poetry followed a narrative, as obscure as it seems at times. As much as they are separate poems, they’re also part of a grander story.
@@ -27,6 +28,7 @@ It's interesting to see how our ideas for the book has transformed so much in so
 We spent hours dissecting each poem, talking about the kind of images/ideas I’d want to convey. I wanted to make sure the visual elements were more than a pretty image (as pretty as they are), but complementary and an additive to the verbal.
 <br/>
 <br/>
+
 ### <span style="color:#ca5743">*the design process*</span>
 
 I speak as an outsider looking in. I can’t even imagine doing what Fyonna does on a daily basis, creating and designing and drawing on a tablet. So, I asked Fyonna what the design process was like for her:
@@ -42,6 +44,8 @@ F: (laughs) We don’t have to mention that part. But yeah, I think I hit a poin
 K: What were some of the illustrations you found easier to draw?
 
 F: The honey one, or the one without a title.
+
+<img src="/assets/kai-s-book-1.jpg" width="400" style="display: block; margin-left: auto; margin-right: auto"/>
 
 K: We went through a few iterations for that one.
 
@@ -60,6 +64,7 @@ K: What have you learned or what would you do differently?
 F: Um. I learned that I should be more careful about the printing process. And to not rush through that. Especially because it’s the final push and you just want to be done with the whole thing. Every part of the process requires an equal amount of attention and detail, especially because it’s like *ours*. It’s our craft. You wanna make it look good, so make it look *damn* good.
 <br/>
 <br/>
+
 ### <span style="color:#ca5743">*printing and publishing—and the mistakes that came with it*</span>
 
 We decided to self-publish. It was the most flexible and easiest route available to us, especially as my dad runs a printing company. Let me just say, printing in colour is *not* cheap. If you’re wondering why a 70-page book costs 19.90—well, that’s why.
@@ -81,6 +86,7 @@ But I’m realizing, the rawness of the book—in its words, its images—isn’
 This is still one of the coolest things I’ve ever done, and despite the nervousness, I'm so excited to share it with you all.
 <br/>
 <br/>
+
 ### <span style="color:#ca5743">*the beginning*</span>
 
 The roughest part of this whole thing, full disclosure, is the promo. Fyonna likes to joke that she’s my PR manager, but I wouldn’t have had this blog without her and my friend, Nicole, who coded this whole thing. I wouldn’t have all the promo videos or posts on Instagram without Fyonna. You can’t even imagine how many takes we did for our announcement video. We went to like four different locations and finally just decided to film it at Fyonna’s.
