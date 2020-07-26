@@ -72,8 +72,8 @@ const blog = ({ data }) => {
                   letterSpacing: "2px",
                   fontSize: "30px",
                   textAlign: "center",
-                  paddingLeft: "10px",
-                  paddingRight: "10px",
+                  paddingLeft: "15px",
+                  paddingRight: "15px",
                 }}
               >
                 {title}
@@ -113,8 +113,8 @@ const blog = ({ data }) => {
                   letterSpacing: "2px",
                   fontSize: "30px",
                   textAlign: "center",
-                  paddingLeft: "10px",
-                  paddingRight: "10px",
+                  paddingLeft: "15px",
+                  paddingRight: "15px",
                 }}
               >
                 {title}
