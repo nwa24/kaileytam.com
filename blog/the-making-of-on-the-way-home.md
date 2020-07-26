@@ -9,6 +9,7 @@ I suppose I should bring it back to the beginning. A friend of mine got me a mug
 
 <img src="/assets/bio.jpg" width="800" style="display: block; margin-left: auto; margin-right: auto"/>
 
+<br/>
 I’m the type of person that can’t stand surprises (I look up the ending of movies while I watch them), so I nagged her enough for her to tell me what the gift was: “I’m making you a book.”
 
 It was going to be a small-scale project, a compilation of a few of my poems into a book she’d print out at school (Emily Carr School of Art and Design).
