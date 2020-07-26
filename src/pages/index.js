@@ -7,6 +7,7 @@ import { Row, Col } from "antd"
 import Img from "gatsby-image/withIEPolyfill"
 import LineBreak from "../components/LineBreak"
 import Footer from "../components/footer"
+import "./index-page.css"
 
 const IndexPage = props => {
   return (
@@ -77,7 +78,10 @@ const IndexPage = props => {
             competition, but a demonstration of listening, rapport, and
             compassion.
           </p>
-          <a href="https://www.kaileytam.com/contact">
+          <a
+            href="https://www.kaileytam.com/contact"
+            className="link-to-contact-page"
+          >
             <p
               style={{
                 fontFamily: "Avenir Light",
