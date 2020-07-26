@@ -7,6 +7,8 @@ I suppose I should bring it back to the beginning. A friend of mine got me a mug
 
 “My gift is way better,” she had said, “but you won’t get it until the end of next year.”
 
+<img src="/assets/bio.jpg" width="800" style="display: block; margin-left: auto; margin-right: auto"/>
+
 I’m the type of person that can’t stand surprises (I look up the ending of movies while I watch them), so I nagged her enough for her to tell me what the gift was: “I’m making you a book.”
 
 It was going to be a small-scale project, a compilation of a few of my poems into a book she’d print out at school (Emily Carr School of Art and Design).
@@ -45,7 +47,8 @@ K: What were some of the illustrations you found easier to draw?
 
 F: The honey one, or the one without a title.
 
-<img src="/assets/kai-s-book-1.jpg" width="400" style="display: block; margin-left: auto; margin-right: auto"/>
+<img src="/assets/kai-s-book-1.jpg" width="800" style="display: block; margin-left: auto; margin-right: auto"/>
+<br/>
 
 K: We went through a few iterations for that one.
 
