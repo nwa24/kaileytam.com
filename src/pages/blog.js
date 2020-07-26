@@ -41,7 +41,7 @@ const blog = ({ data }) => {
 
     // 2. Sort the posts by date so the latest is shown first
     let sortedPosts = posts.sort((a, b) => {
-      return moment(a.node.frontmatter.date).diff(b.node.frontmatter.date)
+      return moment(b.node.frontmatter.date).diff(a.node.frontmatter.date)
     })
 
     return sortedPosts.map(item => {
