@@ -8,6 +8,7 @@ const footer = () => {
         style={{
           backgroundColor: "#e5decf",
           height: "100px",
+          width: "100%",
         }}
         justify="center"
       >
