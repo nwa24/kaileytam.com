@@ -23,7 +23,7 @@ const blog = ({ data }) => {
           paddingTop: "100px",
         }}
       >
-        <Row gutter={[8, 48]}>{renderBlogs(data.allMarkdownRemark.edges)}</Row>
+        <Row gutter={[0, 48]}>{renderBlogs(data.allMarkdownRemark.edges)}</Row>
       </div>
       <Footer />
     </div>
@@ -48,13 +48,13 @@ const blog = ({ data }) => {
       const { slug } = item.node.fields
       const { title, date, featuredImage } = item.node.frontmatter
       return (
-        <Col lg={8} md={16} xs={24}>
+        <Col offset={2} lg={6} md={16} xs={24}>
           {featuredImage ? (
             <BackgroundImage
               fluid={featuredImage.childImageSharp.fixed}
               style={{
-                height: "300px",
-                width: "300px",
+                height: "250px",
+                width: "250px",
                 display: "table-cell",
                 verticalAlign: "middle",
                 opacity: "0.5 !important",
@@ -70,7 +70,7 @@ const blog = ({ data }) => {
                   color: "white",
                   fontFamily: "Montserrat Semibold",
                   letterSpacing: "2px",
-                  fontSize: "30px",
+                  fontSize: "25px",
                   textAlign: "center",
                   paddingLeft: "15px",
                   paddingRight: "15px",
@@ -94,8 +94,8 @@ const blog = ({ data }) => {
           ) : (
             <div
               style={{
-                height: "300px",
-                width: "300px",
+                height: "250px",
+                width: "250px",
                 backgroundColor: "#97af97",
                 display: "table-cell",
                 verticalAlign: "middle",
@@ -111,7 +111,7 @@ const blog = ({ data }) => {
                   color: "white",
                   fontFamily: "Montserrat Semibold",
                   letterSpacing: "2px",
-                  fontSize: "30px",
+                  fontSize: "25px",
                   textAlign: "center",
                   paddingLeft: "15px",
                   paddingRight: "15px",

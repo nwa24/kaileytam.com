@@ -16,7 +16,9 @@ const blogTemplate = ({ data }) => {
   return (
     <>
       <Helmet>
-        <style>{"body { background-color: #f7f3e9 }"}</style>
+        <style>
+          {"body { background-color: #f7f3e9; overflow-x: hidden }"}
+        </style>
         <title>Kailey Tam - {title}</title>
       </Helmet>
       <Navbar />
