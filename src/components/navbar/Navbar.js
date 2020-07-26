@@ -122,6 +122,10 @@ const HeaderTitle = styled.h1`
   font-family: "Montserrat Medium";
   letter-spacing: 1px;
 
+  :hover {
+    cursor: pointer;
+  }
+
   @media (max-width: 760px) {
     font-size: 40px;
     margin-top: 10px;

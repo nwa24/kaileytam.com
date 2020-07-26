@@ -61,9 +61,13 @@
   background: none;
   text-align: center;
   border-color: #ca5743;
+  padding-top: 10px;
+  padding-bottom: 10px;
   padding-left: 20px;
   padding-right: 20px;
   box-shadow: none;
+  border: 1px solid #ca5743;
+  outline: none;
 }
 
 .custom-button:hover {
