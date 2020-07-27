@@ -31,6 +31,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-background-image`,
+    `gatsby-plugin-fontawesome-css`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {

@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Navbar from "../components/navbar/Navbar"
-import ImageCarousel from "../components/ImageCarousel"
+import ImageCarousel from "../components/image-carousel/ImageCarousel"
 import Helmet from "react-helmet"
 import { Row, Col } from "antd"
 import Img from "gatsby-image/withIEPolyfill"
