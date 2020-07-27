@@ -17,15 +17,15 @@ const ImageCarousel = () => {
     <>
       <Carousel nextIcon={nextIcon} prevIcon={prevIcon}>
         <Carousel.Item>
-          <img src={banner1} alt="intro" />
+          <img style={{ maxWidth: "100%" }} src={banner1} alt="intro" />
         </Carousel.Item>
         <Carousel.Item>
           <a href="https://www.kaileytam.com/contact">
-            <img src={banner2} alt="order" />
+            <img style={{ maxWidth: "100%" }} src={banner2} alt="order" />
           </a>
         </Carousel.Item>
         <Carousel.Item>
-          <img src={banner3} alt="latest-blog" />
+          <img style={{ maxWidth: "100%" }} src={banner3} alt="latest-blog" />
         </Carousel.Item>
       </Carousel>
     </>
