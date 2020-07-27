@@ -37,14 +37,14 @@ const IndexPage = props => {
         </Col>
       </Row>
       <Row
-        gutter={[48, 100]}
+        gutter={[16, 100]}
         justify="center"
         align="middle"
         style={{ paddingTop: "50px" }}
       >
-        <Col lg={6} xs={24}>
+        <Col lg={8} xs={24}>
           <Img
-            fluid={props.data.comingSoon.childImageSharp.fluid}
+            fixed={props.data.comingSoon.childImageSharp.fixed}
             objectFit="cover"
             alt="coming-soon"
           />
@@ -101,20 +101,14 @@ const IndexPage = props => {
 
 export default IndexPage
 
-export const fluidImage = graphql`
-  fragment fluidImage on File {
-    childImageSharp {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
-`
-
 export const pageQuery = graphql`
   query {
     comingSoon: file(relativePath: { eq: "open-book.jpg" }) {
-      ...fluidImage
+      childImageSharp {
+        fixed(quality: 100, width: 400) {
+          ...GatsbyImageSharpFixed
+        }
+      }
     }
   }
 `
