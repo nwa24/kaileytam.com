@@ -39,12 +39,7 @@ const blog = ({ data }) => {
       post.node.frontmatter.date = formattedDate
     })
 
-    // 2. Sort the posts by date so the latest is shown first
-    let sortedPosts = posts.sort((a, b) => {
-      return moment(b.node.frontmatter.date).diff(a.node.frontmatter.date)
-    })
-
-    return sortedPosts.map(item => {
+    return posts.map(item => {
       const { slug } = item.node.fields
       const { title, date, featuredImage } = item.node.frontmatter
       return (
@@ -143,7 +138,7 @@ export default blog
 
 export const blogQuery = graphql`
   {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           frontmatter {
