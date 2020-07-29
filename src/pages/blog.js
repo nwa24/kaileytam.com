@@ -10,22 +10,39 @@ import Footer from "../components/footer"
 
 const blog = ({ data }) => {
   return (
-    <div>
+    <div id="holder" style={{ height: "100%" }}>
       <Helmet>
         <style>
-          {"body { background-color: #f7f3e9; overflow-x: hidden }"}
+          {
+            "body { background-color: #f7f3e9; overflow-x: hidden; height: 100% }"
+          }
         </style>
         <title>Kailey Tam - Blog</title>
       </Helmet>
-      <Navbar />
+      <div id="header">
+        <Navbar />
+      </div>
       <div
+        id="body"
         style={{
           paddingTop: "100px",
+          paddingBottom: "50px",
         }}
       >
         <Row gutter={[0, 48]}>{renderBlogs(data.allMarkdownRemark.edges)}</Row>
       </div>
-      <Footer />
+      <div
+        id="footer"
+        style={{
+          height: "100px",
+          width: "100%",
+          position: "absolute",
+          left: 0,
+          bottom: 0,
+        }}
+      >
+        <Footer />
+      </div>
     </div>
   )
 

@@ -3,7 +3,11 @@ import { Row, Col } from "antd"
 
 const footer = () => {
   return (
-    <div style={{ paddingTop: "60px" }}>
+    <div
+      style={{
+        paddingTop: "60px",
+      }}
+    >
       <Row
         style={{
           backgroundColor: "#e5decf",
