@@ -1,11 +1,13 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, navigate } from "gatsby"
 import Img from "gatsby-image/withIEPolyfill"
 import Helmet from "react-helmet"
 import Navbar from "../components/navbar/Navbar"
 import { Row, Col } from "antd"
 import moment from "moment"
 import Footer from "../components/footer"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
 
 const blogTemplate = ({ data }) => {
   const { title, date, featuredImage } = data.post.frontmatter
@@ -23,6 +25,16 @@ const blogTemplate = ({ data }) => {
       </Helmet>
       <Navbar />
       <div style={{ paddingTop: "100px" }}>
+        <Row style={{ paddingLeft: "30px" }}>
+          <Col>
+            <FontAwesomeIcon
+              icon={faArrowLeft}
+              size="2x"
+              onClick={() => navigate(`/blog`)}
+              style={{ cursor: "pointer" }}
+            />
+          </Col>
+        </Row>
         <Row align="middle" gutter={[8, 8]}>
           <Col span={18} offset={2}>
             <p
