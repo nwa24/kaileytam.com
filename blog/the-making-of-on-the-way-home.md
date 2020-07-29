@@ -11,7 +11,8 @@ I suppose I should bring it back to the beginning. A friend of mine got me a mug
 
 <br/>
 I’m the type of person that can’t stand surprises (I look up the ending of movies while I watch them), so I nagged her enough for her to tell me what the gift was: “I’m making you a book.”
-
+<br/>
+<br/>
 It was going to be a small-scale project, a compilation of a few of my poems into a book she’d print out at school (Emily Carr School of Art and Design).
 
 Then March hit, and with March, the shutdown of the city. Quarantine meant the halt of school, work, friends—I spent my entire day at home, going stir-crazy and restless at my lack of productivity. (Not that productivity should be idolized or anything. I have a problem with rest so maybe that was a good thing).
