@@ -8,9 +8,11 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons"
 import banner1 from "../../images/intro-banner.jpg"
 import banner2 from "../../images/order-banner.jpg"
 import banner3 from "../../images/blog-banner.jpg"
+import { StaticQuery, graphql, navigate } from "gatsby"
 
 // 1200 x 480
-const ImageCarousel = () => {
+const ImageCarousel = ({ data }) => {
+  const slug = data.allMarkdownRemark.nodes[0].fields.slug
   const nextIcon = <FontAwesomeIcon icon={faChevronRight} />
   const prevIcon = <FontAwesomeIcon icon={faChevronLeft} />
   return (
@@ -25,11 +27,38 @@ const ImageCarousel = () => {
           </a>
         </Carousel.Item>
         <Carousel.Item>
-          <img style={{ maxWidth: "100%" }} src={banner3} alt="latest-blog" />
+          <img
+            style={{ maxWidth: "100%", cursor: "pointer" }}
+            src={banner3}
+            alt="latest-blog"
+            onClick={() => navigate(`/blog/${slug}`)}
+          />
         </Carousel.Item>
       </Carousel>
     </>
   )
 }
 
-export default ImageCarousel
+const ImageCarouselWithQuery = () => {
+  return (
+    <StaticQuery
+      query={graphql`
+        {
+          allMarkdownRemark(
+            sort: { fields: [frontmatter___date], order: DESC }
+            limit: 1
+          ) {
+            nodes {
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      `}
+      render={data => <ImageCarousel data={data} />}
+    />
+  )
+}
+
+export default ImageCarouselWithQuery
