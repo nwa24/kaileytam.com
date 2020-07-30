@@ -67,4 +67,4 @@ And finally, we arrived at our final iteration:
 
 The amount of care and thought that go into this whole process is kind of crazy as I reflect back on it. We were so proud and so excited to see it all finally come together, grounded in colour, style, meaning, and words. 
 
-Let me know what you think by sending me a message [on the contact page](www.kaileytam.com/contact) and I'll see you next time.
+Let me know what you think by sending me a message [on the contact page](https://www.kaileytam.com/contact) and I'll see you next time.
