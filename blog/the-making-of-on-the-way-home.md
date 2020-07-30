@@ -1,7 +1,7 @@
 ---
 date: 2020-07-25
 title: the making of on the way home
-featuredImage: ""
+featuredImage: /assets/kai-s-book-4.jpg
 ---
 I suppose I should bring it back to the beginning. A friend of mine got me a mug for my birthday—which arrived a few months after my birthday—and just so happened to be the same mug that he had already gotten for his girlfriend. I mean, I’m still grateful for the mug, of course, but Fyonna and I understandably poked fun at the gift.
 
