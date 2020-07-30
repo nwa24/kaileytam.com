@@ -54,7 +54,7 @@ F: The honey one, or the one without a title.
 
 K: We went through a few iterations for that one.
 
-F: It’s the one I like the most. It was the most complicated illustration in the whole book, I would say, but it was so satisfying and aesthetically pleasing to me. Also “fullness”, “dawn” and “midnight hour” and “on the way home” were ones I had a clear vision for, so it was easier to draw them.
+F: It’s the one I like the most. It was the most complicated illustration in the whole book, I would say, but it was so satisfying and aesthetically pleasing to me. Also “fullness”, “dawn”, “midnight hour”, and “on the way home” were ones I had a clear vision for, so it was easier to draw them.
 
 K: What about the more difficult ones?
 
