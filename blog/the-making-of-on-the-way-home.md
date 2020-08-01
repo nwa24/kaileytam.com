@@ -18,7 +18,8 @@ It was going to be a small-scale project, a compilation of a few of my poems int
 <br/>
 <br/>
 Then March hit, and with March, the shutdown of the city. Quarantine meant the halt of school, work, friends—I spent my entire day at home, going stir-crazy and restless at my lack of productivity. (Not that productivity should be idolized or anything. I have a problem with rest so maybe that was a good thing).
-
+<br/>
+<br/>
 In this restlessness, I was reminded of the book Fyonna had drafted up, but the idea grew bigger—what if it was a full-scale book, copyright and everything? Fyonna, in her inability to say no to me, agreed.
 <br/>
 <br/>
