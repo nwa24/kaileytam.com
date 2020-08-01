@@ -44,6 +44,7 @@ const blogTemplate = ({ data }) => {
                 fontSize: "40px",
                 marginBottom: "0px",
                 letterSpacing: "2px",
+                maxWidth: "100%",
               }}
             >
               {title}
