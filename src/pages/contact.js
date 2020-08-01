@@ -8,6 +8,7 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image/withIEPolyfill"
 import LineBreak from "../components/LineBreak"
 import Footer from "../components/footer"
+import KaileyAvatar from "../components/KaileyAvatar/KaileyAvatar"
 
 // Row = 12 cols or 100%
 const contact = props => {
@@ -35,17 +36,13 @@ const contact = props => {
         </Col>
         <Col lg={8} xs={24}>
           <Row justify="start" align="middle" gutter={[0, 48]}>
-            <Col lg={16} xs={20}>
+            <Col lg={16} xs={18}>
               <h2 style={{ fontFamily: "Avenir Light", color: "#2c422f" }}>
                 Hi friends,
               </h2>
             </Col>
-            <Col lg={6} xs={4}>
-              <Img
-                fluid={props.data.avatar.childImageSharp.fluid}
-                objectFit="cover"
-                alt="avatar"
-              />
+            <Col lg={8} xs={5}>
+              <KaileyAvatar />
             </Col>
             <Row justify="start">
               <Col lg={24} xs={24}>
@@ -102,9 +99,6 @@ export const fluidImage = graphql`
 export const pageQuery = graphql`
   query {
     headshot: file(relativePath: { eq: "contact-image.jpeg" }) {
-      ...fluidImage
-    }
-    avatar: file(relativePath: { eq: "kailey-avatar.png" }) {
       ...fluidImage
     }
   }

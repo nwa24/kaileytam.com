@@ -8,6 +8,7 @@ import moment from "moment"
 import Footer from "../components/footer"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
+import KaileyAvatar from "../components/KaileyAvatar/KaileyAvatar"
 
 const blogTemplate = ({ data }) => {
   const { title, date, featuredImage } = data.post.frontmatter
@@ -58,12 +59,8 @@ const blogTemplate = ({ data }) => {
             </p>
             <p style={{ fontFamily: "Avenir Light" }}>{formattedDate}</p>
           </Col>
-          <Col lg={2} xs={0}>
-            <Img
-              fluid={data.avatar.childImageSharp.fluid}
-              objectFit="cover"
-              alt="avatar"
-            />
+          <Col lg={3} xs={0}>
+            <KaileyAvatar />
           </Col>
         </Row>
         {featuredImage && (
