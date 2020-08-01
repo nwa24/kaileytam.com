@@ -7,10 +7,11 @@ import moment from "moment"
 import BackgroundImage from "gatsby-background-image"
 import LineBreak from "../components/LineBreak"
 import Footer from "../components/footer"
+import "./blog-page.css"
 
 const blog = ({ data }) => {
   return (
-    <div id="holder" style={{ height: "100%" }}>
+    <div id="holder" style={{ minHeight: "100%", positive: "relative" }}>
       <Helmet>
         <style>
           {
@@ -26,18 +27,19 @@ const blog = ({ data }) => {
         id="body"
         style={{
           paddingTop: "100px",
-          paddingBottom: "50px",
+          paddingBottom: "60px",
         }}
       >
         <Row gutter={[0, 48]}>{renderBlogs(data.allMarkdownRemark.edges)}</Row>
       </div>
       <div
         id="footer"
+        className="footerContainer"
         style={{
-          height: "100px",
+          height: "150px",
           width: "100%",
-          left: 0,
           bottom: 0,
+          position: "absolute",
         }}
       >
         <Footer />
