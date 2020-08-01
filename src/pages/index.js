@@ -25,6 +25,8 @@ const IndexPage = props => {
         style={{
           paddingTop: "100px",
           marginBottom: "0px",
+          marginLeft: "auto",
+          marginRight: "auto",
         }}
       >
         <Col>
