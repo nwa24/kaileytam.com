@@ -21,7 +21,7 @@ const ImageCarousel = ({ data }) => {
         <Carousel.Item>
           <img
             className="image-carousel"
-            style={{ width: "1200px", height: "480px" }}
+            style={{ width: "1000px", height: "400px" }}
             src={banner1}
             alt="intro"
           />
@@ -30,7 +30,7 @@ const ImageCarousel = ({ data }) => {
           <a href="https://www.kaileytam.com/contact">
             <img
               className="image-carousel"
-              style={{ width: "1200px", height: "480px" }}
+              style={{ width: "1000px", height: "400px" }}
               src={banner2}
               alt="order"
             />
@@ -39,7 +39,7 @@ const ImageCarousel = ({ data }) => {
         <Carousel.Item>
           <img
             className="image-carousel"
-            style={{ width: "1200px", height: "480px" }}
+            style={{ width: "1000px", height: "400px" }}
             src={banner3}
             alt="latest-blog"
             onClick={() => navigate(`/blog/${slug}`)}
