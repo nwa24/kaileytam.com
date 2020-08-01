@@ -5,9 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons"
 
-import banner1 from "../../images/intro-banner.jpg"
-import banner2 from "../../images/order-banner.jpg"
-import banner3 from "../../images/blog-banner.jpg"
+import banner1 from "../../images/intro-banner-high-res.jpg"
+import banner2 from "../../images/order-banner-high-res.jpg"
+import banner3 from "../../images/blog-banner-high-res.jpg"
 import { StaticQuery, graphql, navigate } from "gatsby"
 
 // 1200 x 480
@@ -19,16 +19,27 @@ const ImageCarousel = ({ data }) => {
     <>
       <Carousel nextIcon={nextIcon} prevIcon={prevIcon}>
         <Carousel.Item>
-          <img style={{ maxWidth: "100%" }} src={banner1} alt="intro" />
+          <img
+            className="image-carousel"
+            style={{ width: "1200px", height: "480px" }}
+            src={banner1}
+            alt="intro"
+          />
         </Carousel.Item>
         <Carousel.Item>
           <a href="https://www.kaileytam.com/contact">
-            <img style={{ maxWidth: "100%" }} src={banner2} alt="order" />
+            <img
+              className="image-carousel"
+              style={{ width: "1200px", height: "480px" }}
+              src={banner2}
+              alt="order"
+            />
           </a>
         </Carousel.Item>
         <Carousel.Item>
           <img
-            style={{ maxWidth: "100%", cursor: "pointer" }}
+            className="image-carousel"
+            style={{ width: "1200px", height: "480px" }}
             src={banner3}
             alt="latest-blog"
             onClick={() => navigate(`/blog/${slug}`)}
