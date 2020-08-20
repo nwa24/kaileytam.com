@@ -8,18 +8,13 @@ import BackgroundImage from 'gatsby-background-image';
 import Navbar from 'components/nav-bar';
 import LineBreak from 'components/line-break';
 import Footer from 'components/footer';
+import Header from 'components/header';
 import './blog-page.css';
 
 const blog = ({ data }) => {
   return (
     <div id="holder" style={{ minHeight: '100%', positive: 'relative' }}>
-      <Helmet>
-        <style>{'body { background-color: #f7f3e9; overflow-x: hidden; height: 100% }'}</style>
-        <title>Kailey Tam - Blog</title>
-      </Helmet>
-      <div id="header">
-        <Navbar />
-      </div>
+      <Header pageTitle={'blog'} />
       <div
         id="body"
         style={{

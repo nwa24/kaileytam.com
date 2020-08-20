@@ -8,16 +8,13 @@ import Navbar from 'components/nav-bar';
 import ImageCarousel from 'components/image-carousel';
 import LineBreak from 'components/line-break';
 import Footer from 'components/footer';
+import Header from 'components/header';
 import './index-page.css';
 
 const IndexPage = ({ data }) => {
   return (
     <div>
-      <Helmet>
-        <style>{'body { background-color: #f7f3e9; overflow-x: hidden }'}</style>
-        <title>Kailey Tam</title>
-      </Helmet>
-      <Navbar />
+      <Header />
       <Row
         gutter={[16, 100]}
         justify="center"

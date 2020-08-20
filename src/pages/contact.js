@@ -10,15 +10,12 @@ import ContactForm from 'components/contact-form';
 import LineBreak from 'components/line-break';
 import Footer from 'components/footer';
 import KaileyAvatar from 'components/kailey-avatar';
+import Header from 'components/header';
 
 const contact = (props) => {
   return (
     <div>
-      <Helmet>
-        <style>{'body { background-color: #f7f3e9; overflow-x: hidden }'}</style>
-        <title>Kailey Tam - Contact</title>
-      </Helmet>
-      <Navbar />
+      <Header pageTitle={'Contact'} />
       <Row justify="center" align="middle" gutter={[64, 64]} style={{ paddingTop: '100px' }}>
         <Col lg={8} xs={24}>
           <Img fluid={props.data.headshot.childImageSharp.fluid} objectFit="cover" alt="headshot" />

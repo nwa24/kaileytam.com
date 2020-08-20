@@ -10,6 +10,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import Navbar from 'components/nav-bar';
 import Footer from 'components/footer';
 import KaileyAvatar from 'components/kailey-avatar';
+import Header from 'components/header';
 
 const blogTemplate = ({ data }) => {
   const { title, date, featuredImage } = data.post.frontmatter;
@@ -19,11 +20,7 @@ const blogTemplate = ({ data }) => {
 
   return (
     <>
-      <Helmet>
-        <style>{'body { background-color: #f7f3e9; overflow-x: hidden }'}</style>
-        <title>Kailey Tam - {title}</title>
-      </Helmet>
-      <Navbar />
+      <Header pageTitle={title} />
       <div style={{ paddingTop: '100px' }}>
         <Row style={{ paddingLeft: '30px' }}>
           <Col>
