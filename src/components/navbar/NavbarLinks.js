@@ -49,10 +49,9 @@ const NavbarLinks = () => {
       <NavItem to="/contact" activeClassName="active">
         Contact
       </NavItem>
-      {/* Temporarily disabling the shop page */}
-      {/* <NavItem to="/shop" className="shopLink" activeClassName="active">
+      <NavItem to="/shop" className="shopLink" activeClassName="active">
         Shop
-      </NavItem> */}
+      </NavItem>
       <InstagramLogo />
     </>
   )
