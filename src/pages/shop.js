@@ -1,9 +1,9 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import Navbar from '../components/nav-bar';
-import ProductListing from '../components/product-listing';
-import Footer from '../components/footer';
+import Navbar from 'components/nav-bar';
+import ProductListing from 'components/product-listing';
+import Footer from 'components/footer';
 
 const shop = () => {
   return (

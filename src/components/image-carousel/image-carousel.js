@@ -5,9 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
-import banner1 from '../../images/intro-banner-high-res.jpg';
-import banner2 from '../../images/order-banner-high-res.jpg';
-import banner3 from '../../images/blog-banner-high-res.jpg';
+import banner1 from 'images/intro-banner-high-res.jpg';
+import banner2 from 'images/order-banner-high-res.jpg';
+import banner3 from 'images/blog-banner-high-res.jpg';
 import './image-carousel.css';
 
 // 1200 x 480

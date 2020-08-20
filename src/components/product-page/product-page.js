@@ -2,10 +2,10 @@ import React from 'react';
 import Img from 'gatsby-image';
 import { Helmet } from 'react-helmet';
 
-import Navbar from '../nav-bar';
-import Footer from '../footer';
-import { useProductContext } from '../../context/ProductsProvider';
-import { formatPrice } from '../../helpers/index';
+import Navbar from 'components/nav-bar';
+import Footer from 'components/footer';
+import { useProductContext } from 'context/ProductsProvider';
+import { formatPrice } from 'helpers/index';
 
 // TODO
 //  - Style each of the individual components

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { useProductContext, ProductProvider } from '../../context/ProductsProvider';
-import ProductCard from '../product-card';
+import { useProductContext, ProductProvider } from 'context/ProductsProvider';
+import ProductCard from 'components/product-card';
 
 const mapPriceToProduct = (products, prices) => {
   const productsAndPrices = products;

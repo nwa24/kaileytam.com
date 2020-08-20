@@ -2,7 +2,7 @@ import React from 'react';
 import Img from 'gatsby-image';
 import { Link } from 'gatsby';
 
-import { formatPrice } from '../../helpers/index';
+import { formatPrice } from 'helpers/index';
 
 const ProductCard = ({ productAndPrice }) => {
   const { localFiles, name } = productAndPrice;

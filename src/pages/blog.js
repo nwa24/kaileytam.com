@@ -5,9 +5,9 @@ import { Row, Col } from 'antd';
 import moment from 'moment';
 import BackgroundImage from 'gatsby-background-image';
 
-import Navbar from '../components/nav-bar';
-import LineBreak from '../components/line-break';
-import Footer from '../components/footer';
+import Navbar from 'components/nav-bar';
+import LineBreak from 'components/line-break';
+import Footer from 'components/footer';
 import './blog-page.css';
 
 const blog = ({ data }) => {

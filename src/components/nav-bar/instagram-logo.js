@@ -1,6 +1,6 @@
 import React from 'react';
 
-import InstagramIcon from '../../images/instagram-logo2.png';
+import InstagramIcon from 'images/instagram-logo2.png';
 
 const InstagramLogo = () => {
   return (

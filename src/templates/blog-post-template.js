@@ -7,9 +7,9 @@ import moment from 'moment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-import Navbar from '../components/nav-bar';
-import Footer from '../components/footer';
-import KaileyAvatar from '../components/kailey-avatar';
+import Navbar from 'components/nav-bar';
+import Footer from 'components/footer';
+import KaileyAvatar from 'components/kailey-avatar';
 
 const blogTemplate = ({ data }) => {
   const { title, date, featuredImage } = data.post.frontmatter;

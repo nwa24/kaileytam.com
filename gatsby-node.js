@@ -10,6 +10,19 @@ const { fmImagesToRelative } = require('gatsby-remark-relative-images');
 const path = require('path');
 const slug = require('slug');
 
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        components: path.resolve(__dirname, 'src/components'),
+        context: path.resolve(__dirname, 'src/context'),
+        helpers: path.resolve(__dirname, 'src/helpers'),
+        images: path.resolve(__dirname, 'src/images'),
+      },
+    },
+  });
+};
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
   let parentNode = getNode(node.parent);

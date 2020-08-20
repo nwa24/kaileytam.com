@@ -5,11 +5,11 @@ import { Row, Col } from 'antd';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image/withIEPolyfill';
 
-import Navbar from '../components/nav-bar';
-import ContactForm from '../components/contact-form';
-import LineBreak from '../components/line-break';
-import Footer from '../components/footer';
-import KaileyAvatar from '../components/kailey-avatar';
+import Navbar from 'components/nav-bar';
+import ContactForm from 'components/contact-form';
+import LineBreak from 'components/line-break';
+import Footer from 'components/footer';
+import KaileyAvatar from 'components/kailey-avatar';
 
 const contact = (props) => {
   return (
