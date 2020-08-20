@@ -1,10 +1,10 @@
 import React from 'react';
 
-import ProductListing from 'components/product-listing';
 import Footer from 'components/footer';
 import Header from 'components/header';
+import ProductListing from 'components/product-listing';
 
-const shop = () => {
+export default function ShopPage() {
   return (
     <div id="page-container" className="relative min-h-screen">
       <Header pageTitle={'Shop'} />
@@ -14,6 +14,4 @@ const shop = () => {
       <Footer />
     </div>
   );
-};
-
-export default shop;
+}

@@ -1,9 +1,9 @@
-import React from 'react';
-import { StaticQuery, graphql, navigate } from 'gatsby';
-import { Carousel } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { StaticQuery, graphql, navigate } from 'gatsby';
+import React from 'react';
+import { Carousel } from 'react-bootstrap';
 
 import banner1 from 'images/intro-banner-high-res.jpg';
 import banner2 from 'images/order-banner-high-res.jpg';
@@ -11,7 +11,7 @@ import banner3 from 'images/blog-banner-high-res.jpg';
 import './image-carousel.css';
 
 // 1200 x 480
-const ImageCarousel = ({ data }) => {
+function ImageCarousel({ data }) {
   const slug = data.allMarkdownRemark.nodes[0].fields.slug;
   const nextIcon = <FontAwesomeIcon icon={faChevronRight} />;
   const prevIcon = <FontAwesomeIcon icon={faChevronLeft} />;
@@ -54,9 +54,9 @@ const ImageCarousel = ({ data }) => {
       </Carousel>
     </>
   );
-};
+}
 
-const ImageCarouselWithQuery = () => {
+export default function ImageCarouselWithQuery() {
   return (
     <StaticQuery
       query={graphql`
@@ -73,6 +73,4 @@ const ImageCarouselWithQuery = () => {
       render={(data) => <ImageCarousel data={data} />}
     />
   );
-};
-
-export default ImageCarouselWithQuery;
+}

@@ -1,6 +1,6 @@
+import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
 
 import InstagramLogo from './instagram-logo';
 
@@ -38,7 +38,7 @@ const NavItem = styled(Link)`
     z-index: 6;
   }
 `;
-const NavbarLinks = () => {
+export default function NavbarLinks() {
   return (
     <>
       <NavItem to="/" activeClassName="active">
@@ -56,6 +56,4 @@ const NavbarLinks = () => {
       <InstagramLogo />
     </>
   );
-};
-
-export default NavbarLinks;
+}

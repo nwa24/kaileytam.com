@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 
 import NavBar from 'components/nav-bar';
 
-const Header = ({ pageTitle }) => {
+export default function Header({ pageTitle }) {
   return (
     <>
       <Helmet>
@@ -13,6 +13,4 @@ const Header = ({ pageTitle }) => {
       <NavBar />
     </>
   );
-};
-
-export default Header;
+}

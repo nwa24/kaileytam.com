@@ -1,7 +1,7 @@
-import React from 'react';
 import { Row, Col } from 'antd';
+import React from 'react';
 
-const footer = () => {
+export default function footer() {
   return (
     <div className="absolute bottom-0 w-full h-20">
       <Row
@@ -21,5 +21,4 @@ const footer = () => {
       </Row>
     </div>
   );
-};
-export default footer;
+}

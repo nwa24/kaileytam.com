@@ -1,12 +1,12 @@
-import React, { createContext, useContext } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import React, { createContext, useContext } from 'react';
 
 const ProductContext = createContext();
 
 /**
  * Wrapper to give Provider access to Gatsby's GraphQL store
  */
-const ProductProvider = ({ children }) => {
+function ProductProvider({ children }) {
   const data = useStaticQuery(productQueryAndPricesQuery);
   const [prices, products] = processGatsbyData(data);
   return (
@@ -23,9 +23,9 @@ const ProductProvider = ({ children }) => {
       {children}
     </ProductContext.Provider>
   );
-};
+}
 
-const processGatsbyData = (data) => {
+function processGatsbyData(data) {
   const prices = {};
   const products = {};
 
@@ -42,15 +42,15 @@ const processGatsbyData = (data) => {
   });
 
   return [prices, products];
-};
+}
 
-const useProductContext = () => {
+function useProductContext() {
   const context = useContext(ProductContext);
   if (context === undefined) {
     throw new Error('useProductContext must be used within a ProductProvider');
   }
   return context;
-};
+}
 
 export const priceFragment = graphql`
   fragment Price on StripePrice {

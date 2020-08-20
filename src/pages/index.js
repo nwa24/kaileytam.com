@@ -1,15 +1,15 @@
-import React from 'react';
-import { graphql } from 'gatsby';
 import { Row, Col } from 'antd';
+import { graphql } from 'gatsby';
 import Img from 'gatsby-image/withIEPolyfill';
+import React from 'react';
 
-import ImageCarousel from 'components/image-carousel';
-import LineBreak from 'components/line-break';
 import Footer from 'components/footer';
 import Header from 'components/header';
+import ImageCarousel from 'components/image-carousel';
+import LineBreak from 'components/line-break';
 import './index-page.css';
 
-const IndexPage = ({ data }) => {
+export default function IndexPage({ data }) {
   return (
     <div>
       <Header />
@@ -79,9 +79,7 @@ const IndexPage = ({ data }) => {
       <Footer style={{ paddingTop: '60px' }} />
     </div>
   );
-};
-
-export default IndexPage;
+}
 
 export const pageQuery = graphql`
   query {

@@ -1,15 +1,15 @@
-import React from 'react';
-import { graphql, navigate } from 'gatsby';
 import { Row, Col } from 'antd';
-import moment from 'moment';
+import { graphql, navigate } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
+import moment from 'moment';
+import React from 'react';
 
-import LineBreak from 'components/line-break';
 import Footer from 'components/footer';
 import Header from 'components/header';
+import LineBreak from 'components/line-break';
 import './blog-page.css';
 
-const blog = ({ data }) => {
+export default function BlogPage({ data }) {
   return (
     <div id="holder" style={{ minHeight: '100%', positive: 'relative' }}>
       <Header pageTitle={'blog'} />
@@ -143,9 +143,7 @@ const blog = ({ data }) => {
       );
     });
   }
-};
-
-export default blog;
+}
 
 export const blogQuery = graphql`
   {

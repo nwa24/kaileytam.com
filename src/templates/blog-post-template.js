@@ -1,17 +1,16 @@
-import React from 'react';
+import { Row, Col } from 'antd';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { graphql, navigate } from 'gatsby';
 import Img from 'gatsby-image/withIEPolyfill';
-import Helmet from 'react-helmet';
-import { Row, Col } from 'antd';
 import moment from 'moment';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import React from 'react';
 
 import Footer from 'components/footer';
-import KaileyAvatar from 'components/kailey-avatar';
 import Header from 'components/header';
+import KaileyAvatar from 'components/kailey-avatar';
 
-const blogTemplate = ({ data }) => {
+export default function blogTemplate({ data }) {
   const { title, date, featuredImage } = data.post.frontmatter;
   const { html } = data.post;
 
@@ -78,9 +77,7 @@ const blogTemplate = ({ data }) => {
       <Footer />
     </>
   );
-};
-
-export default blogTemplate;
+}
 
 export const blogTemplateQuery = graphql`
   query($slug: String!) {

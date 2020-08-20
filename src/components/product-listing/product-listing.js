@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { useProductContext, ProductProvider } from 'context/ProductsProvider';
 import ProductCard from 'components/product-card';
+import { useProductContext, ProductProvider } from 'context/ProductsProvider';
 
-const mapPriceToProduct = (products, prices) => {
+function mapPriceToProduct(products, prices) {
   const productsAndPrices = products;
 
   Object.keys(productsAndPrices).forEach((key) => {
@@ -14,9 +14,9 @@ const mapPriceToProduct = (products, prices) => {
   });
 
   return productsAndPrices;
-};
+}
 
-const Product = () => {
+function Product() {
   const { listProducts, prices } = useProductContext();
   const listOfProductsAndPrices = mapPriceToProduct(listProducts(), prices);
 
@@ -27,14 +27,12 @@ const Product = () => {
       ))}
     </div>
   );
-};
+}
 
-const ProductListing = () => {
+export default function ProductListing() {
   return (
     <ProductProvider>
       <Product />
     </ProductProvider>
   );
-};
-
-export default ProductListing;
+}

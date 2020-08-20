@@ -1,9 +1,10 @@
+import { Row, Col as Col1 } from 'antd';
 import React from 'react';
 import { Form, FormGroup, Col, Button } from 'react-bootstrap';
-import { Row, Col as Col1 } from 'antd';
+
 import './contact-form.css';
 
-const ContactForm = () => {
+export default function ContactForm() {
   return (
     <>
       <Form
@@ -65,6 +66,4 @@ const ContactForm = () => {
       </Form>
     </>
   );
-};
-
-export default ContactForm;
+}

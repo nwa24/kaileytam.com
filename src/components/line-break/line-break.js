@@ -1,16 +1,14 @@
-import React from "react"
+import React from 'react';
 
-const LineBreak = props => {
+export default function LineBreak({ width, colour }) {
   return (
     <>
       <hr
         style={{
-          width: `${props.width}`,
-          border: `1px solid ${props.colour}`,
+          width: `${width}`,
+          border: `1px solid ${colour}`,
         }}
       />
     </>
-  )
+  );
 }
-
-export default LineBreak

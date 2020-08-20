@@ -1,10 +1,10 @@
-import React from 'react';
-import Img from 'gatsby-image';
 import { Link } from 'gatsby';
+import Img from 'gatsby-image';
+import React from 'react';
 
 import { formatPrice } from 'helpers/index';
 
-const ProductCard = ({ productAndPrice }) => {
+export default function ProductCard({ productAndPrice }) {
   const { localFiles, name } = productAndPrice;
   const { unit_amount, currency } = productAndPrice.price;
   const { slug } = productAndPrice.price.fields;
@@ -28,6 +28,4 @@ const ProductCard = ({ productAndPrice }) => {
       </Link>
     </div>
   );
-};
-
-export default ProductCard;
+}

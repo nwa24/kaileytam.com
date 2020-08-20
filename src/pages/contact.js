@@ -1,16 +1,16 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col } from 'antd';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image/withIEPolyfill';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import ContactForm from 'components/contact-form';
-import LineBreak from 'components/line-break';
 import Footer from 'components/footer';
-import KaileyAvatar from 'components/kailey-avatar';
 import Header from 'components/header';
+import KaileyAvatar from 'components/kailey-avatar';
+import LineBreak from 'components/line-break';
 
-const contact = (props) => {
+export default function ContactPage(props) {
   return (
     <div>
       <Header pageTitle={'Contact'} />
@@ -62,9 +62,7 @@ const contact = (props) => {
       <Footer />
     </div>
   );
-};
-
-export default contact;
+}
 
 export const fluidImage = graphql`
   fragment fluidImage on File {

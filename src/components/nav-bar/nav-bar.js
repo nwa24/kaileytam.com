@@ -1,6 +1,6 @@
+import { navigate } from 'gatsby';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { navigate } from 'gatsby';
 
 import NavbarLinks from './nav-bar-links';
 
@@ -132,7 +132,7 @@ const HeaderTitle = styled.h1`
   }
 `;
 
-const Navbar = () => {
+export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
@@ -158,6 +158,4 @@ const Navbar = () => {
       )}
     </Navigation>
   );
-};
-
-export default Navbar;
+}
