@@ -13,7 +13,7 @@ const ProductCard = ({ productAndPrice }) => {
 
   return (
     <div className="w-1/6">
-      <Link to={`/buy/${slug}`}>
+      <Link className="hover:no-underline" to={`/buy/${slug}`}>
         {localFiles && (
           <div className="relative w-full p-8 object-contain">
             <Img
