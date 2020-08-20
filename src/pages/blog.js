@@ -1,11 +1,9 @@
 import React from 'react';
 import { graphql, navigate } from 'gatsby';
-import Helmet from 'react-helmet';
 import { Row, Col } from 'antd';
 import moment from 'moment';
 import BackgroundImage from 'gatsby-background-image';
 
-import Navbar from 'components/nav-bar';
 import LineBreak from 'components/line-break';
 import Footer from 'components/footer';
 import Header from 'components/header';

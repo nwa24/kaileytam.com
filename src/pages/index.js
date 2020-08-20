@@ -1,10 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Helmet from 'react-helmet';
 import { Row, Col } from 'antd';
 import Img from 'gatsby-image/withIEPolyfill';
 
-import Navbar from 'components/nav-bar';
 import ImageCarousel from 'components/image-carousel';
 import LineBreak from 'components/line-break';
 import Footer from 'components/footer';
