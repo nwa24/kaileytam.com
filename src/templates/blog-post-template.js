@@ -1,38 +1,37 @@
-import React from "react"
-import { graphql, navigate } from "gatsby"
-import Img from "gatsby-image/withIEPolyfill"
-import Helmet from "react-helmet"
-import Navbar from "../components/navbar/Navbar"
-import { Row, Col } from "antd"
-import moment from "moment"
-import Footer from "../components/footer"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
-import KaileyAvatar from "../components/KaileyAvatar/KaileyAvatar"
+import React from 'react';
+import { graphql, navigate } from 'gatsby';
+import Img from 'gatsby-image/withIEPolyfill';
+import Helmet from 'react-helmet';
+import { Row, Col } from 'antd';
+import moment from 'moment';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
+import Navbar from '../components/nav-bar';
+import Footer from '../components/footer';
+import KaileyAvatar from '../components/kailey-avatar';
 
 const blogTemplate = ({ data }) => {
-  const { title, date, featuredImage } = data.post.frontmatter
-  const { html } = data.post
+  const { title, date, featuredImage } = data.post.frontmatter;
+  const { html } = data.post;
 
-  let formattedDate = moment.utc(date).format("DD/MMM/YYYY")
+  const formattedDate = moment.utc(date).format('DD/MMM/YYYY');
 
   return (
     <>
       <Helmet>
-        <style>
-          {"body { background-color: #f7f3e9; overflow-x: hidden }"}
-        </style>
+        <style>{'body { background-color: #f7f3e9; overflow-x: hidden }'}</style>
         <title>Kailey Tam - {title}</title>
       </Helmet>
       <Navbar />
-      <div style={{ paddingTop: "100px" }}>
-        <Row style={{ paddingLeft: "30px" }}>
+      <div style={{ paddingTop: '100px' }}>
+        <Row style={{ paddingLeft: '30px' }}>
           <Col>
             <FontAwesomeIcon
               icon={faArrowLeft}
               size="2x"
               onClick={() => navigate(`/blog`)}
-              style={{ cursor: "pointer" }}
+              style={{ cursor: 'pointer' }}
             />
           </Col>
         </Row>
@@ -40,25 +39,25 @@ const blogTemplate = ({ data }) => {
           <Col span={18} offset={2}>
             <p
               style={{
-                fontFamily: "Montserrat Medium",
-                fontSize: "40px",
-                marginBottom: "0px",
-                letterSpacing: "2px",
-                maxWidth: "100%",
+                fontFamily: 'Montserrat Medium',
+                fontSize: '40px',
+                marginBottom: '0px',
+                letterSpacing: '2px',
+                maxWidth: '100%',
               }}
             >
               {title}
             </p>
             <p
               style={{
-                fontFamily: "Avenir Light",
-                color: "#ca5743",
-                marginBottom: "0px",
+                fontFamily: 'Avenir Light',
+                color: '#ca5743',
+                marginBottom: '0px',
               }}
             >
               Written by Kailey Tam
             </p>
-            <p style={{ fontFamily: "Avenir Light" }}>{formattedDate}</p>
+            <p style={{ fontFamily: 'Avenir Light' }}>{formattedDate}</p>
           </Col>
           <Col lg={3} xs={0}>
             <KaileyAvatar />
@@ -67,18 +66,14 @@ const blogTemplate = ({ data }) => {
         {featuredImage && (
           <Row justify="center" gutter={[8, 48]}>
             <Col span={20}>
-              <Img
-                fluid={featuredImage.childImageSharp.fluid}
-                objectFit="cover"
-                alt="blogImage"
-              />
+              <Img fluid={featuredImage.childImageSharp.fluid} objectFit="cover" alt="blogImage" />
             </Col>
           </Row>
         )}
         <Row justify="center" gutter={[8, 48]}>
           <Col span={20}>
             <div
-              style={{ fontFamily: "Avenir Light", color: "#000000" }}
+              style={{ fontFamily: 'Avenir Light', color: '#000000' }}
               dangerouslySetInnerHTML={{ __html: html }}
             />
           </Col>
@@ -86,10 +81,10 @@ const blogTemplate = ({ data }) => {
       </div>
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default blogTemplate
+export default blogTemplate;
 
 export const blogTemplateQuery = graphql`
   query($slug: String!) {
@@ -115,4 +110,4 @@ export const blogTemplateQuery = graphql`
       }
     }
   }
-`
+`;

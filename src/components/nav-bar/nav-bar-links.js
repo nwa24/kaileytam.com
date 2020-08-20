@@ -1,7 +1,8 @@
-import React from "react"
-import styled from "styled-components"
-import { Link } from "gatsby"
-import InstagramLogo from "./InstagramLogo"
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'gatsby';
+
+import InstagramLogo from './instagram-logo';
 
 const NavItem = styled(Link)`
   text-decoration: none;
@@ -10,7 +11,7 @@ const NavItem = styled(Link)`
   white-space: nowrap;
   margin: 0 1vw;
   position: relative;
-  font-family: "Montserrat Semibold";
+  font-family: 'Montserrat Semibold';
   letter-spacing: 2px;
 
   :after {
@@ -19,7 +20,7 @@ const NavItem = styled(Link)`
     left: 0;
     right: 0;
     width: 0%;
-    content: ".";
+    content: '.';
     color: transparent;
     height: 1px;
   }
@@ -36,7 +37,7 @@ const NavItem = styled(Link)`
     font-size: 1.5rem;
     z-index: 6;
   }
-`
+`;
 const NavbarLinks = () => {
   return (
     <>
@@ -54,7 +55,7 @@ const NavbarLinks = () => {
       </NavItem>
       <InstagramLogo />
     </>
-  )
-}
+  );
+};
 
-export default NavbarLinks
+export default NavbarLinks;
