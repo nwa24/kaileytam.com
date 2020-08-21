@@ -3,13 +3,16 @@ import React from 'react';
 
 import Footer from 'components/footer';
 import Header from 'components/header';
-import { useProductContext } from 'context/ProductsProvider';
+import { useCartContext } from 'context/cart-provider';
+import { useProductContext } from 'context/products-provider';
 import { formatPrice } from 'helpers/index';
 
 export default function ProductPage({ productId }) {
-  const { products, prices } = useProductContext();
-  const { name, localFiles, description } = products[productId];
-  const { unit_amount, currency } = prices[productId];
+  const { products } = useProductContext();
+  const { add, toggle, available } = useCartContext();
+
+  const { name, localFiles, description, id } = products[productId];
+  const { unit_amount, currency } = products[productId].price;
 
   const price = formatPrice(unit_amount, currency);
 
@@ -32,8 +35,15 @@ export default function ProductPage({ productId }) {
             autoComplete="off"
             className="font-body text-darkGreen outline-none bg-inputBoxes h-10 w-24 p-2 text-sm"
           />
-          <button className="mb-8 ml-8 font-header2 uppercase text-darkRed rounded-full p-2 text-sm border-darkRed border-2 hover:bg-darkRed hover:text-white">
-            Add To Cart
+          <button
+            className="mb-8 ml-8 font-header2 uppercase text-darkRed rounded-full p-2 text-sm border-darkRed border-2 hover:bg-darkRed hover:text-white"
+            onClick={() => {
+              add(id);
+              toggle(true);
+            }}
+            disabled={!available(id)}
+          >
+            {available(id) ? 'Add To Cart' : 'Sold Out'}
           </button>
           <div className="font-body text-black">{description}</div>
         </div>

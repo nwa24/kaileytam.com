@@ -8,11 +8,11 @@ const ProductContext = createContext();
  */
 function ProductProvider({ children }) {
   const data = useStaticQuery(productQueryAndPricesQuery);
-  const [prices, products] = processGatsbyData(data);
+  const products = processGatsbyData(data);
+
   return (
     <ProductContext.Provider
       value={{
-        prices,
         products,
         listProducts: (sortFn) => {
           const fn = sortFn || ((a, b) => b.created - a.created);
@@ -41,7 +41,16 @@ function processGatsbyData(data) {
     products[productId] = product;
   });
 
-  return [prices, products];
+  const productsAndPrices = products;
+
+  Object.keys(productsAndPrices).forEach((key) => {
+    const productId = productsAndPrices[key].id;
+    if (prices.hasOwnProperty(productId)) {
+      productsAndPrices[key]['price'] = prices[productId];
+    }
+  });
+
+  return productsAndPrices;
 }
 
 function useProductContext() {

@@ -4,10 +4,10 @@ import React from 'react';
 
 import { formatPrice } from 'helpers/index';
 
-export default function ProductCard({ productAndPrice }) {
-  const { localFiles, name } = productAndPrice;
-  const { unit_amount, currency } = productAndPrice.price;
-  const { slug } = productAndPrice.price.fields;
+export default function ProductCard({ product }) {
+  const { localFiles, name } = product;
+  const { unit_amount, currency } = product.price;
+  const { slug } = product.price.fields;
 
   const price = formatPrice(unit_amount, currency);
 

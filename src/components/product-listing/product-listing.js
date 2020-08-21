@@ -1,29 +1,16 @@
 import React from 'react';
 
 import ProductCard from 'components/product-card';
-import { useProductContext, ProductProvider } from 'context/ProductsProvider';
-
-function mapPriceToProduct(products, prices) {
-  const productsAndPrices = products;
-
-  Object.keys(productsAndPrices).forEach((key) => {
-    const productId = productsAndPrices[key].id;
-    if (prices.hasOwnProperty(productId)) {
-      productsAndPrices[key]['price'] = prices[productId];
-    }
-  });
-
-  return productsAndPrices;
-}
+import { useProductContext, ProductProvider } from 'context/products-provider';
 
 function Product() {
-  const { listProducts, prices } = useProductContext();
-  const listOfProductsAndPrices = mapPriceToProduct(listProducts(), prices);
+  const { listProducts } = useProductContext();
+  const products = listProducts();
 
   return (
     <div className="flex flex-wrap items-center justify-around">
-      {listOfProductsAndPrices.map((productAndPrice) => (
-        <ProductCard key={productAndPrice.id} productAndPrice={productAndPrice} />
+      {products.map((product) => (
+        <ProductCard key={product.id} product={product} />
       ))}
     </div>
   );

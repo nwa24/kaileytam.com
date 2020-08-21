@@ -1,12 +1,15 @@
 import React from 'react';
 
-import { ProductProvider } from 'context/ProductsProvider';
+import { CartProvider } from 'context/cart-provider';
+import { ProductProvider } from 'context/products-provider';
 import ProductPage from 'components/product-page';
 
 export default function ProductTemplate({ pageContext: { id } }) {
   return (
     <ProductProvider>
-      <ProductPage productId={id} />
+      <CartProvider>
+        <ProductPage productId={id} />
+      </CartProvider>
     </ProductProvider>
   );
 }
