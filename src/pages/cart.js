@@ -1,17 +1,18 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import CartItem from 'components/cart-item';
 import Footer from 'components/footer';
 import Header from 'components/header';
 import { useCartContext, CartProvider } from 'context/cart-provider';
 import { ProductProvider } from 'context/products-provider';
-import { calculateTotalPrice, formatPrice } from 'helpers/index';
+import { formatPrice } from 'helpers/index';
 
 function CartListing() {
   const { cart, count, set, remove } = useCartContext();
 
   const quantityTotalCost = [];
   let subTotal = 0;
+  let width = window.innerWidth;
 
   if (count > 0) {
     const { currency } = cart[0][0].price;
@@ -29,13 +30,6 @@ function CartListing() {
 
   return (
     <>
-      {count > 0 && (
-        <div id="grid-headings" className="flex justify-end">
-          <div className="w-1/6 font-header2 text-darkGreen tracking-widest">Price</div>
-          <div className="w-1/6 font-header2 text-darkGreen tracking-widest">Quantity</div>
-          <div className="w-1/6 font-header2 text-darkGreen tracking-widest">Total</div>
-        </div>
-      )}
       {count > 0 &&
         cart.map(([product, quantity]) => (
           <CartItem
@@ -52,11 +46,11 @@ function CartListing() {
         </div>
       )}
       {count > 0 && (
-        <div className="flex justify-end">
-          <div className="pr-40">
-            <p className="font-body text-darkGreen text-sm text-right">Subtotal</p>
-            <p className="font-header2 text-darkGreen font-semibold text-right">{subTotal}</p>
-            <p className="font-body text-darkGreen text-xs text-right">
+        <div className="flex justify-end text-right lg:pr-24">
+          <div className="w-2/3 lg:w-1/6 pr-8 pt-4">
+            <p className="font-body text-darkGreen text-sm">Subtotal</p>
+            <p className="font-header2 text-darkGreen font-semibold">{subTotal}</p>
+            <p className="font-body text-darkGreen text-xs">
               Taxes and shipping calculated at checkout
             </p>
           </div>

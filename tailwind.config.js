@@ -1,3 +1,4 @@
+// prettier-ignore
 module.exports = {
   purge: [],
   theme: {
@@ -44,6 +45,11 @@ module.exports = {
       },
     },
   },
-  variants: {},
-  plugins: [],
+  variants: {
+    textAlign: ['responsive'],
+  },
+  plugins: [require("tailwindcss-debug-screens")],
+  future: {
+    removeDeprecatedGapUtilities: true,
+  }
 };

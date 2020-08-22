@@ -31,7 +31,7 @@ export default function ProductPage({ productId }) {
           <div className="font-body text-darkGreen text-lg pb-8">
             Shipping is calculated at checkout
           </div>
-          <label className="font-body text-darkGreen uppercase block">Qty</label>
+          <label className="font-body text-darkGreen block">Quantity</label>
           <input
             type="number"
             autoComplete="off"
