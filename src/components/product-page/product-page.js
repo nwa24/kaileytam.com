@@ -1,5 +1,5 @@
 import Img from 'gatsby-image';
-import React from 'react';
+import React, { useRef } from 'react';
 
 import Footer from 'components/footer';
 import Header from 'components/header';
@@ -9,12 +9,14 @@ import { formatPrice } from 'helpers/index';
 
 export default function ProductPage({ productId }) {
   const { products } = useProductContext();
-  const { add, toggle, available } = useCartContext();
+  const { set, available } = useCartContext();
 
   const { name, localFiles, description, id } = products[productId];
   const { unit_amount, currency } = products[productId].price;
 
   const price = formatPrice(unit_amount, currency);
+
+  const quantityInput = useRef();
 
   return (
     <div id="page-container" className="relative min-h-screen">
@@ -33,13 +35,13 @@ export default function ProductPage({ productId }) {
           <input
             type="number"
             autoComplete="off"
+            ref={quantityInput}
             className="font-body text-darkGreen outline-none bg-inputBoxes h-10 w-24 p-2 text-sm"
           />
           <button
             className="mb-8 ml-8 font-header2 uppercase text-darkRed rounded-full p-2 text-sm border-darkRed border-2 hover:bg-darkRed hover:text-white"
             onClick={() => {
-              add(id);
-              toggle(true);
+              set(id, parseInt(quantityInput.current.value));
             }}
             disabled={!available(id)}
           >

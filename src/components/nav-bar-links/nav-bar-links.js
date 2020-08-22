@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import InstagramLogo from 'components/instagram-logo';
+import NavBarCart from 'components/nav-bar-cart';
 
 const NavItem = styled(Link)`
   text-decoration: none;
@@ -54,6 +55,7 @@ export default function NavbarLinks() {
         Shop
       </NavItem>
       <InstagramLogo />
+      <NavBarCart />
     </>
   );
 }

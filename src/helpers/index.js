@@ -8,4 +8,10 @@ function formatPrice(amount, currency) {
   return numberFormat.format(price);
 }
 
-export { formatPrice };
+function calculateTotalPrice(unit_amount, quantity, currency) {
+  const totalCost = unit_amount * quantity;
+  const formattedTotalCost = formatPrice(totalCost, currency);
+  return formattedTotalCost;
+}
+
+export { formatPrice, calculateTotalPrice };

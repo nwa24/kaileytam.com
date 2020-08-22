@@ -12,7 +12,7 @@ function CartProvider({ children }) {
   const { products } = useProductContext();
   const [mode, setMode] = useState(false);
 
-  const [contents, setContents] = useState(() => {
+  const [contents, setContents] = useState(function () {
     // Load cart from local storage
     // Initialize if not present or incorrect
     let localCart;
@@ -28,16 +28,19 @@ function CartProvider({ children }) {
   });
 
   // Save cart to local storage after load and on update
-  useEffect(() => {
-    try {
-      localStorage.setItem('cart', JSON.stringify(contents));
-    } catch (err) {
-      console.error(err);
-    }
-  }, [contents]);
+  useEffect(
+    function () {
+      try {
+        localStorage.setItem('cart', JSON.stringify(contents));
+      } catch (err) {
+        console.error(err);
+      }
+    },
+    [contents]
+  );
 
   /**
-   * An array representing cart items in the form of [{price}, quantity]
+   * An array representing cart items in the form of [{products}, quantity]
    */
   const cart = contents.map(([id, quantity]) => {
     return [products[id], quantity];
@@ -92,29 +95,6 @@ function CartProvider({ children }) {
   }
 
   /**
-   * Increments the quantity of price in the cart
-   * @param {string} id The id of the price
-   * @param {number} [quantity=1] The quantity to add
-   * @returns {number} The cart quantity after the operation
-   */
-  function add(id, quantity = 1) {
-    const currentQuantity = get(id);
-    return set(id, quantity + currentQuantity);
-  }
-
-  /**
-   * Decrements the quantity of price in the cart
-   * @param {string} id The id of the price
-   * @param {number} [quantity=1] The quantity to subtract
-   * @returns {number} The cart quantity after the operation
-   */
-  function subtract(id, quantity = 1) {
-    const currentQuantity = get(id);
-    const newQuantity = Math.max(0, quantity - currentQuantity);
-    return set(id, newQuantity);
-  }
-
-  /**
    * Removes a price from the cart
    * @param {string} id The id of the price
    */
@@ -128,35 +108,21 @@ function CartProvider({ children }) {
    * Checks whether an item is available for purchase
    * @param {string} id The id of the price
    * @param {number} [quantity=1] The requested quantity
-   * @returns {boolean} Whether a purchase of the quanttiy would be possible
+   * @returns {boolean} Whether a purchase of the quantity would be possible
    */
   function available(id, quantity = 1) {
     return true;
   }
 
-  /**
-   * Toggles cart display, or sets to 'mode' if provided
-   * @param {boolean} [mode] Force cart into mode
-   * 'true' for open
-   * 'false' for closed
-   */
-  function toggle(mode) {
-    setMode((prev) => mode || !prev);
-  }
-
   const ctx = {
     contents,
     cart,
-    add,
-    subtract,
     get,
     set,
     remove,
     available,
-    toggle,
     count,
     total,
-    mode,
   };
 
   return <CartContext.Provider value={{ ...ctx }}>{children}</CartContext.Provider>;
