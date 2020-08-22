@@ -2,7 +2,7 @@ import { navigate } from 'gatsby';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import NavbarLinks from './nav-bar-links';
+import NavbarLinks from 'components/nav-bar-links';
 
 const Navigation = styled.nav`
   height: 8vh;

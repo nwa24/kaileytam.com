@@ -2,7 +2,7 @@ import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 
-import InstagramLogo from './instagram-logo';
+import InstagramLogo from 'components/instagram-logo';
 
 const NavItem = styled(Link)`
   text-decoration: none;

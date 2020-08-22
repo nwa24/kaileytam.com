@@ -12,8 +12,6 @@ function CartProvider({ children }) {
   const { products } = useProductContext();
   const [mode, setMode] = useState(false);
 
-  console.log(products);
-
   const [contents, setContents] = useState(() => {
     // Load cart from local storage
     // Initialize if not present or incorrect
@@ -31,7 +29,6 @@ function CartProvider({ children }) {
 
   // Save cart to local storage after load and on update
   useEffect(() => {
-    console.log(contents);
     try {
       localStorage.setItem('cart', JSON.stringify(contents));
     } catch (err) {
