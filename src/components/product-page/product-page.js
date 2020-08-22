@@ -21,11 +21,11 @@ export default function ProductPage({ productId }) {
   return (
     <div id="page-container" className="relative min-h-screen">
       <Header pageTitle={name} />
-      <div id="content-wrap" className="pb-20 pt-24 flex justify-evenly">
-        <div className="sm:w-full md:w-2/6 lg:w-2/6 px-2 ml-auto">
+      <div id="content-wrap" className="pb-20 pt-24 flex justify-evenly flex-wrap">
+        <div className="w-full lg:w-2/6 px-2 ml-auto">
           <Img fluid={localFiles[0].childImageSharp.fluid} alt={name} />
         </div>
-        <div className="sm:w-full md:w-2/6 lg:w-2/6 px-2 mr-auto">
+        <div className="w-full lg:w-2/6 px-2 mr-auto">
           <div className="font-header1 text-darkGreen tracking-widest text-4xl">{name}</div>
           <div className="font-header2 text-darkRed tracking-widest text-2xl">{price}</div>
           <div className="font-body text-darkGreen text-lg pb-8">
@@ -47,7 +47,7 @@ export default function ProductPage({ productId }) {
           >
             {available(id) ? 'Add To Cart' : 'Sold Out'}
           </button>
-          <div className="font-body text-black">{description}</div>
+          <div className="font-body text-black pb-20">{description}</div>
         </div>
       </div>
       <Footer />

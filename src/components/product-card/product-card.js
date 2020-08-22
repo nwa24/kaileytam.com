@@ -12,19 +12,13 @@ export default function ProductCard({ product }) {
   const price = formatPrice(unit_amount, currency);
 
   return (
-    <div className="w-1/6">
+    <div className="w-1/2 lg:w-1/6 p-4">
       <Link className="hover:no-underline" to={`/buy/${slug}`}>
         {localFiles && (
-          <div className="relative w-full p-8 object-contain">
-            <Img
-              className="absolute top-0 bottom-0 w-full h-full object-center object-cover"
-              fluid={localFiles[0].childImageSharp.fluid}
-              alt={name}
-            />
-          </div>
+          <Img className="w-full" fluid={localFiles[0].childImageSharp.fluid} alt={name} />
         )}
-        <p className="font-body text-darkRed text-2xl text-center">{name}</p>
-        <p className="font-header1 text-darkRed text-2xl text-center">{price}</p>
+        <p className="font-body text-darkRed text-base lg:text-2xl text-center">{name}</p>
+        <p className="font-header1 text-darkRed text-lg lg:text-2xl text-center">{price}</p>
       </Link>
     </div>
   );
