@@ -57,7 +57,7 @@ export default function CartItem({ product, quantity, set, remove }) {
     );
   } else {
     return (
-      <>
+      <div className="pt-4">
         <div className="flex">
           <Img className="w-24 ml-8 mr-8" fluid={localFiles[0].childImageSharp.fluid} alt={name} />
           <div className="w-1/2">
@@ -92,7 +92,7 @@ export default function CartItem({ product, quantity, set, remove }) {
             {totalCost}
           </p>
         </div>
-      </>
+      </div>
     );
   }
 }

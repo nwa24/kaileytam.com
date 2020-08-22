@@ -6,6 +6,7 @@ import Header from 'components/header';
 import { useCartContext } from 'context/cart-provider';
 import { useProductContext } from 'context/products-provider';
 import { formatPrice } from 'helpers/index';
+import { navigate } from 'gatsby';
 
 export default function ProductPage({ productId }) {
   const { products } = useProductContext();
@@ -42,6 +43,7 @@ export default function ProductPage({ productId }) {
             className="mb-8 ml-8 font-header2 uppercase text-darkRed rounded-full p-2 text-sm border-darkRed border-2 hover:bg-darkRed hover:text-white"
             onClick={() => {
               set(id, parseInt(quantityInput.current.value));
+              navigate(`/cart`);
             }}
             disabled={!available(id)}
           >

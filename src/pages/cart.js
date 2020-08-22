@@ -12,7 +12,6 @@ function CartListing() {
 
   const quantityTotalCost = [];
   let subTotal = 0;
-  let width = window.innerWidth;
 
   if (count > 0) {
     const { currency } = cart[0][0].price;
@@ -46,7 +45,7 @@ function CartListing() {
         </div>
       )}
       {count > 0 && (
-        <div className="flex justify-end text-right lg:pr-24">
+        <div className="flex justify-end text-right pb-20 lg:pr-24">
           <div className="w-2/3 lg:w-1/6 pr-8 pt-4">
             <p className="font-body text-darkGreen text-sm">Subtotal</p>
             <p className="font-header2 text-darkGreen font-semibold">{subTotal}</p>
