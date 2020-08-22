@@ -31,6 +31,18 @@ const Navigation = styled.nav`
     }
   }
 
+  a.shopLink:hover {
+    background-color: #ca5743;
+    color: white;
+    text-decoration: none;
+  }
+
+  a.shopLink.active {
+    background-color: #ca5743 !important;
+    color: white !important;
+    text-decoration: none !important;
+  }
+
   @media (max-width: 768px) {
     height: 8vh;
     top: 0;
