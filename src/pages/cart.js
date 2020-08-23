@@ -1,6 +1,7 @@
 import React from 'react';
 
 import CartItem from 'components/cart-item';
+import CheckoutButton from 'components/checkout-button';
 import Footer from 'components/footer';
 import Header from 'components/header';
 import { useCartContext, CartProvider } from 'context/cart-provider';
@@ -55,7 +56,7 @@ function CartListing() {
           </div>
         </div>
       )}
-      {/* Need to add Checkout Button (and any other buttons) */}
+      <CheckoutButton cart={cart} />
     </>
   );
 }
