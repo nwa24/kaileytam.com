@@ -17,7 +17,9 @@ function CartProvider({ children }) {
     // Initialize if not present or incorrect
     let localCart;
     try {
-      localCart = JSON.parse(localStorage.getItem('cart'));
+      if (typeof window !== 'undefined') {
+        localCart = JSON.parse(localStorage.getItem('cart'));
+      }
     } catch (err) {
       console.error(err);
     }
@@ -31,7 +33,9 @@ function CartProvider({ children }) {
   useEffect(
     function () {
       try {
-        localStorage.setItem('cart', JSON.stringify(contents));
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('cart', JSON.stringify(contents));
+        }
       } catch (err) {
         console.error(err);
       }
