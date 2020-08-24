@@ -39,6 +39,7 @@ const CheckoutButton = () => {
 
       // Check the availability of the Payment Request API
       paymentRequest.canMakePayment().then((result) => {
+        console.log(result);
         if (result) {
           setPaymentRequest(paymentRequest);
         }
