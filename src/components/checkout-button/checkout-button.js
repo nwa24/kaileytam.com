@@ -1,51 +1,63 @@
-import React from 'react';
-import { loadStripe } from '@stripe/stripe-js';
+import React, { useState, useEffect } from 'react';
+import { useCartContext } from 'context/cart-provider';
+import { PaymentRequestButtonElement, useStripe } from '@stripe/react-stripe-js';
 
-let stripePromise;
-const getStripe = () => {
-  if (!stripePromise) {
-    stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY);
-  }
-  return stripePromise;
-};
+const CheckoutButton = () => {
+  const { cart } = useCartContext();
+  const stripe = useStripe();
+  const [paymentRequest, setPaymentRequest] = useState(null);
 
-const CheckoutButton = ({ cart }) => {
-  const formatLineItems = () => {
-    const lineItems = [];
-    cart.forEach((item) => {
-      const price = item[0].price.id;
-      const quantity = item[1];
-      lineItems.push({ price: price, quantity: quantity });
-    });
-
-    return lineItems;
-  };
-
-  const redirectToCheckout = async (event) => {
-    event.preventDefault();
-
-    const lineItems = formatLineItems();
-
-    const stripe = await getStripe();
-    stripe
-      .redirectToCheckout({
-        mode: 'payment',
-        lineItems: lineItems,
-        successUrl: `http://localhost:8000`,
-        cancelUrl: `http://localhost:8000/cart`,
-        billingAddressCollection: 'required',
-        shippingAddressCollection: {
-          allowedCountries: ['US', 'CA'],
+  useEffect(() => {
+    if (stripe) {
+      const paymentRequest = stripe.paymentRequest({
+        country: 'CA',
+        currency: 'cad',
+        total: {
+          // This will come from line items
+          amount: 2000,
+          label: 'Total',
         },
-      })
-      .then((result) => {
-        if (result.error) {
-          console.warn('Error: ', error);
+        displayItems: [
+          {
+            amount: 2000,
+            label: 'A soft cotten shirt',
+          },
+        ],
+        requestPayerName: true,
+        requestPayerEmail: true,
+        requestPayerPhone: true,
+        requestShipping: true,
+        shippingOptions: [
+          {
+            id: 'basic',
+            label: 'Ground shipping',
+            detail: 'Ground shipping via UPS or FedEx',
+            amount: 995,
+          },
+        ],
+      });
+
+      // Check the availability of the Payment Request API
+      paymentRequest.canMakePayment().then((result) => {
+        if (result) {
+          setPaymentRequest(paymentRequest);
         }
       });
+    }
+  }, [stripe]);
+
+  const redirectToCheckout = () => {
+    const lineItems = cart.map(([product, quantity]) => ({
+      price: product.price.id,
+      quantity,
+    }));
   };
 
-  return <button onClick={redirectToCheckout}>Checkout</button>;
+  if (paymentRequest) {
+    return <PaymentRequestButtonElement options={{ paymentRequest }} />;
+  } else {
+    return <button onClick={redirectToCheckout}>Checkout</button>;
+  }
 };
 
 export default CheckoutButton;
