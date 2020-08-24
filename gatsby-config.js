@@ -1,3 +1,10 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable global-require */
+/* eslint-disable prettier/prettier */
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -12,6 +19,15 @@ module.exports = {
       options: {
         name: `blog-images`,
         path: `${__dirname}/static/assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-stripe`,
+      options: {
+        objects: ['Product', 'Price'],
+        secretKey: process.env.STRIPE_SECRET_KEY,
+        downloadFiles: true,
+        auth: false,
       },
     },
     {
@@ -36,7 +52,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          "gatsby-remark-relative-images",
+          'gatsby-remark-relative-images',
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -67,7 +83,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-174023053-1",
+        trackingId: 'UA-174023053-1',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        postCssPlugins: [require('tailwindcss')('./tailwind.config.js')],
       },
     },
     `gatsby-plugin-antd`,
@@ -75,4 +97,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

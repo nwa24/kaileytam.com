@@ -1,7 +1,9 @@
-import React from "react"
-import styled from "styled-components"
-import { Link } from "gatsby"
-import InstagramLogo from "./InstagramLogo"
+import { Link } from 'gatsby';
+import React from 'react';
+import styled from 'styled-components';
+
+import InstagramLogo from 'components/instagram-logo';
+import NavBarCart from 'components/nav-bar-cart';
 
 const NavItem = styled(Link)`
   text-decoration: none;
@@ -10,7 +12,7 @@ const NavItem = styled(Link)`
   white-space: nowrap;
   margin: 0 1vw;
   position: relative;
-  font-family: "Montserrat Semibold";
+  font-family: 'Montserrat Semibold';
   letter-spacing: 2px;
 
   :after {
@@ -19,7 +21,7 @@ const NavItem = styled(Link)`
     left: 0;
     right: 0;
     width: 0%;
-    content: ".";
+    content: '.';
     color: transparent;
     height: 1px;
   }
@@ -36,8 +38,8 @@ const NavItem = styled(Link)`
     font-size: 1.5rem;
     z-index: 6;
   }
-`
-const NavbarLinks = () => {
+`;
+export default function NavbarLinks() {
   return (
     <>
       <NavItem to="/" activeClassName="active">
@@ -49,13 +51,11 @@ const NavbarLinks = () => {
       <NavItem to="/contact" activeClassName="active">
         Contact
       </NavItem>
-      {/* Temporarily disabling the shop page */}
-      {/* <NavItem to="/shop" className="shopLink" activeClassName="active">
+      <NavItem to="/shop" className="shopLink" activeClassName="active">
         Shop
-      </NavItem> */}
+      </NavItem>
       <InstagramLogo />
+      <NavBarCart />
     </>
-  )
+  );
 }
-
-export default NavbarLinks

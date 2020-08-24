@@ -1,21 +1,17 @@
-import React from "react"
-import Navbar from "../components/navbar/Navbar"
-import { Container } from "react-bootstrap"
-import Helmet from "react-helmet"
+import React from 'react';
 
-const shop = () => {
+import Footer from 'components/footer';
+import Header from 'components/header';
+import ProductListing from 'components/product-listing';
+
+export default function ShopPage() {
   return (
-    <>
-      <Helmet>
-        <style>{"body { background-color: #f6debc }"}</style>
-        <title>Kailey Tam - Shop</title>
-      </Helmet>
-      <Navbar />
-      <Container fluid style={{ backgroundColor: "#f6debc" }}>
-        <h1>Shop</h1>
-      </Container>
-    </>
-  )
+    <div id="page-container" className="relative min-h-screen">
+      <Header pageTitle={'Shop'} />
+      <div id="content-wrap" className="pb-20 pt-24">
+        <ProductListing />
+      </div>
+      <Footer />
+    </div>
+  );
 }
-
-export default shop

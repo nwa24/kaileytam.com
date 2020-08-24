@@ -1,9 +1,10 @@
-import React from "react"
-import { Form, FormGroup, Col, Button } from "react-bootstrap"
-import { Row, Col as Col1 } from "antd"
-import "./ContactForm.css"
+import { Row, Col as Col1 } from 'antd';
+import React from 'react';
+import { Form, FormGroup, Col, Button } from 'react-bootstrap';
 
-const ContactForm = () => {
+import './contact-form.css';
+
+export default function ContactForm() {
   return (
     <>
       <Form
@@ -18,7 +19,7 @@ const ContactForm = () => {
         {/* This is done to filter for spam submissions */}
         <p hidden>
           <label>
-            Don't fill this out:
+            Don&apos;t fill this out:
             <input name="bot-field" />
           </label>
         </p>
@@ -26,12 +27,7 @@ const ContactForm = () => {
           <Col1 span={12}>
             <Form.Row>
               <Form.Group as={Col} controlId="formGroupName">
-                <Form.Control
-                  required
-                  type="text"
-                  placeholder="Name"
-                  name="name"
-                />
+                <Form.Control required type="text" placeholder="Name" name="name" />
               </Form.Group>
             </Form.Row>
           </Col1>
@@ -40,12 +36,7 @@ const ContactForm = () => {
           <Col1 span={12}>
             <Form.Row>
               <Form.Group as={Col} controlId="formGroupEmail">
-                <Form.Control
-                  required
-                  type="email"
-                  placeholder="Email"
-                  name="email"
-                />
+                <Form.Control required type="email" placeholder="Email" name="email" />
               </Form.Group>
             </Form.Row>
           </Col1>
@@ -65,7 +56,7 @@ const ContactForm = () => {
             </Form.Row>
           </Col1>
         </Row>
-        <Row justify="center" align="center" style={{ paddingTop: "20px" }}>
+        <Row justify="center" align="center" style={{ paddingTop: '20px' }}>
           <Col1>
             <Button bsPrefix="custom-button" type="submit" size="lg">
               Submit
@@ -74,7 +65,5 @@ const ContactForm = () => {
         </Row>
       </Form>
     </>
-  )
+  );
 }
-
-export default ContactForm

@@ -1,39 +1,73 @@
 /**
- * Implement Gatsby's Node APIs in this file.
+ * Implement Gatsby's Node APIs in thccccis file.
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
 // You can delete this file if you're not using it
-const { createFilePath } = require("gatsby-source-filesystem")
-const { fmImagesToRelative } = require("gatsby-remark-relative-images")
-const path = require("path")
+const { createFilePath } = require('gatsby-source-filesystem');
+const { fmImagesToRelative } = require('gatsby-remark-relative-images');
+const path = require('path');
+const slug = require('slug');
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        components: path.resolve(__dirname, 'src/components'),
+        context: path.resolve(__dirname, 'src/context'),
+        helpers: path.resolve(__dirname, 'src/helpers'),
+        images: path.resolve(__dirname, 'src/images'),
+      },
+    },
+  });
+};
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
-  let parentNode = getNode(node.parent)
-  fmImagesToRelative(node)
-  if (node.internal.type === "MarkdownRemark") {
-    if (parentNode.sourceInstanceName === "markdown-pages") {
-      let slug = createFilePath({ node, getNode })
-      slug = slug.replace(/\//g, "")
-      actions.createNodeField({ node, name: "slug", value: slug })
+  const { createNodeField } = actions;
+  let parentNode = getNode(node.parent);
+  fmImagesToRelative(node);
+
+  if (node.internal.type === 'MarkdownRemark') {
+    if (parentNode.sourceInstanceName === 'markdown-pages') {
+      let filePath = createFilePath({ node, getNode });
+      filePath = filePath.replace(/\//g, '');
+      createNodeField({ node, name: 'slug', value: filePath });
     }
+  } else if (node.internal.type === 'StripePrice') {
+    const value = slug(node.product.name, slug.defaults.modes['rfc3986']);
+    createNodeField({
+      node,
+      name: 'slug',
+      value: value,
+    });
   }
-}
+};
 
 exports.createPages = async ({ graphql, actions }) => {
   // You could keep the GQL Query in here - I prefer to separate
-  const { data } = await getPageData(graphql)
+  const { data } = await getPageData(graphql);
 
   data.blogPosts.edges.forEach(({ node }) => {
-    const { slug } = node.fields
+    const { slug } = node.fields;
     actions.createPage({
       path: `/blog/${slug}`,
-      component: path.resolve("./src/templates/blog-post-template.js"),
+      component: path.resolve('./src/templates/blog-post-template.js'),
       context: { slug: slug },
-    })
-  })
-}
+    });
+  });
+
+  data.products.edges.forEach(({ node }) => {
+    const { slug } = node.fields;
+    const { id } = node.product;
+    actions.createPage({
+      path: `/buy/${slug}`,
+      component: path.resolve('./src/templates/product-template.js'),
+      context: { id },
+    });
+  });
+};
+
 async function getPageData(graphql) {
   return await graphql(`
     {
@@ -46,6 +80,19 @@ async function getPageData(graphql) {
           }
         }
       }
+      products: allStripePrice {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            product {
+              id
+              name
+            }
+          }
+        }
+      }
     }
-  `)
+  `);
 }
