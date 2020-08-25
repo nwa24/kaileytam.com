@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import ProductCard from 'components/product-card';
-import { useProductContext, ProductProvider } from 'context/products-provider';
+import ProductCard from "components/product-card";
+import { useProductContext, ProductProvider } from "context/products-provider";
 
 function Product() {
   const { listProducts } = useProductContext();

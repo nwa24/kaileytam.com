@@ -1,5 +1,5 @@
-import { useStaticQuery, graphql } from 'gatsby';
-import React, { createContext, useContext } from 'react';
+import { useStaticQuery, graphql } from "gatsby";
+import React, { createContext, useContext } from "react";
 
 const ProductContext = createContext();
 
@@ -10,13 +10,26 @@ function ProductProvider({ children }) {
   const data = useStaticQuery(productQueryAndPricesQuery);
   const products = processGatsbyData(data);
 
+  const filterShippingProducts = (allProducts) => {
+    const productsOnly = {};
+
+    for (let product of Object.values(allProducts)) {
+      if (product.metadata.shipping == "false") {
+        productsOnly[product.id] = product;
+      }
+    }
+
+    return productsOnly;
+  };
+
   return (
     <ProductContext.Provider
       value={{
         products,
         listProducts: (sortFn) => {
+          const productsOnly = filterShippingProducts(products);
           const fn = sortFn || ((a, b) => b.created - a.created);
-          return Object.values(products).sort(fn);
+          return Object.values(productsOnly).sort(fn);
         },
       }}
     >
@@ -46,7 +59,7 @@ function processGatsbyData(data) {
   Object.keys(productsAndPrices).forEach((key) => {
     const productId = productsAndPrices[key].id;
     if (prices.hasOwnProperty(productId)) {
-      productsAndPrices[key]['price'] = prices[productId];
+      productsAndPrices[key]["price"] = prices[productId];
     }
   });
 
@@ -56,7 +69,7 @@ function processGatsbyData(data) {
 function useProductContext() {
   const context = useContext(ProductContext);
   if (context === undefined) {
-    throw new Error('useProductContext must be used within a ProductProvider');
+    throw new Error("useProductContext must be used within a ProductProvider");
   }
   return context;
 }
@@ -89,6 +102,9 @@ export const productFragment = graphql`
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
+    }
+    metadata {
+      shipping
     }
   }
 `;

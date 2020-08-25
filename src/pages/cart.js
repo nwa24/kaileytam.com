@@ -1,6 +1,4 @@
 import React from 'react';
-import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
 
 import CartItem from 'components/cart-item';
 import CheckoutButton from 'components/checkout-button';
@@ -64,19 +62,16 @@ function CartListing() {
 }
 
 export default function CartPage() {
-  const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY);
   return (
     <ProductProvider>
       <CartProvider>
-        <Elements stripe={stripePromise}>
-          <div id="page-container" className="relative min-h-screen">
-            <Header pageTitle={'Cart'} />
-            <div id="content-wrap" className="pb-20 pt-24">
-              <CartListing />
-            </div>
-            <Footer />
+        <div id="page-container" className="relative min-h-screen">
+          <Header pageTitle={'Cart'} />
+          <div id="content-wrap" className="pb-20 pt-24">
+            <CartListing />
           </div>
-        </Elements>
+          <Footer />
+        </div>
       </CartProvider>
     </ProductProvider>
   );
