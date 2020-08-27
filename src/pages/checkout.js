@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 
+import Footer from "components/footer";
 import Header from "components/header";
+import ShippingOption from "components/shipping-option";
 import { useCartContext, CartProvider } from "context/cart-provider";
 import { ProductProvider } from "context/products-provider";
 
@@ -9,7 +11,27 @@ const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY);
 
 const ShippingOptions = () => {
   const { cart } = useCartContext();
-  const [shippingOption, setShippingOption] = useState("");
+  const [shippingOption, setShippingOption] = useState("pickup");
+  const [shippingProperties, setShippingProperties] = useState([
+    {
+      shippingOption: "pickup",
+      description: "Pick up in Vancouver (coordinated over email)",
+      price: "$0.00",
+      btnActive: true,
+    },
+    {
+      shippingOption: "canada",
+      description: "Canada",
+      price: "$4.00",
+      btnActive: false,
+    },
+    {
+      shippingOption: "usa",
+      description: "USA",
+      price: "$10.00",
+      btnActive: false,
+    },
+  ]);
 
   const redirectToCheckout = () => {
     const lineItems = cart.map(([product, quantity]) => ({
@@ -57,24 +79,51 @@ const ShippingOptions = () => {
     });
   };
 
-  const onChangeValue = (event) => {
-    setShippingOption(event.target.value);
-  };
+  const onChangeValue = useCallback(
+    (value) => {
+      const copyShippingProperties = shippingProperties;
 
-  // TODO: Disable the "Proceed to Payment" button if there are no shipping options selected
+      const { btnActive } = copyShippingProperties.find(
+        (shipping) => shipping.shippingOption === value
+      );
+
+      copyShippingProperties.forEach((shipping) => {
+        if (shipping.shippingOption == value) {
+          shipping.btnActive = !btnActive;
+        } else {
+          shipping.btnActive = btnActive;
+        }
+      });
+
+      setShippingProperties([...copyShippingProperties]);
+      setShippingOption(value);
+    },
+    [shippingProperties]
+  );
+
+  // TODO: Make sure the page is responsive
   return (
     <>
-      <div onChange={onChangeValue}>
-        <input type="radio" value="pickup" name="shipping" />
-        Pick up in Vancouver (coordinated over email) - $0.00
-        <br />
-        <input type="radio" value="canada" name="shipping" />
-        Canada - $4.00
-        <br />
-        <input type="radio" value="usa" name="shipping" />
-        USA - $10.00
+      <div>
+        {shippingProperties.map((shipping) => {
+          const { shippingOption, description, price, btnActive } = shipping;
+          return (
+            <ShippingOption
+              key={shippingOption}
+              shippingOption={shippingOption}
+              description={description}
+              price={price}
+              btnActive={btnActive}
+              onChangeValue={onChangeValue}
+            />
+          );
+        })}
       </div>
-      <button role="link" onClick={redirectToCheckout}>
+      <button
+        role="link"
+        className="rounded-full border-darkRed border-2 p-3 font-header2 text-darkRed text-sm mb-16 hover:bg-darkRed hover:text-white"
+        onClick={redirectToCheckout}
+      >
         Proceed to Payment
       </button>
     </>
@@ -83,15 +132,18 @@ const ShippingOptions = () => {
 
 const CheckoutPage = () => {
   return (
-    <>
-      <Header pageTitle={"Checkout"} />
-      <ProductProvider>
-        <CartProvider>
-          <h1>Shipping Method</h1>
-          <ShippingOptions />
-        </CartProvider>
-      </ProductProvider>
-    </>
+    <ProductProvider>
+      <CartProvider>
+        <div id="page-container" className="relative min-h-screen">
+          <Header pageTitle={"Checkout"} />
+          <div id="content-wrap" className="pb-20 pt-24 pl-8 pr-8">
+            <h1 className="font-header2 tracking-wide pb-4">Shipping Method</h1>
+            <ShippingOptions />
+          </div>
+          <Footer />
+        </div>
+      </CartProvider>
+    </ProductProvider>
   );
 };
 

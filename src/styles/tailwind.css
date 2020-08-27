@@ -1,19 +1,28 @@
 @tailwind base;
 @tailwind components;
+
+.in-active-btn {
+  @apply flex border-2 border-solid rounded-lg border-darkRed border-opacity-25 w-full align-middle p-8 mb-8;
+}
+
+.active-btn {
+  @apply flex border-2 border-solid rounded-lg border-darkRed border-opacity-100 w-full align-middle p-8 mb-8;
+}
+
 @tailwind utilities;
 
 @font-face {
-	font-family: 'Montserrat Medium';
-	src: url('../../fonts/montserrat-medium/MontserratMedium.woff') format('woff');
+  font-family: "Montserrat Medium";
+  src: url("../../fonts/montserrat-medium/MontserratMedium.woff") format("woff");
 }
 
 @font-face {
-	font-family: 'Montserrat Semibold';
-	src: url('../../fonts/montserrat-semibold/MontserratSemiBold.woff')
-		format('woff');
+  font-family: "Montserrat Semibold";
+  src: url("../../fonts/montserrat-semibold/MontserratSemiBold.woff")
+    format("woff");
 }
 
 @font-face {
-	font-family: 'Avenir Light';
-	src: url('../../fonts/avenir-light/AvenirLight.woff') format('woff');
+  font-family: "Avenir Light";
+  src: url("../../fonts/avenir-light/AvenirLight.woff") format("woff");
 }

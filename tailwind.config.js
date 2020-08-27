@@ -47,6 +47,7 @@ module.exports = {
   },
   variants: {
     textAlign: ['responsive'],
+    borderColor: ['responsive', 'active', 'focus']
   },
   plugins: [require("tailwindcss-debug-screens")],
   future: {
