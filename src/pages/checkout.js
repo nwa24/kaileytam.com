@@ -64,7 +64,7 @@ const ShippingOptions = () => {
       body: JSON.stringify(lineItems),
     }).then(async (response) => {
       const { id } = await response.json();
-      // Set the local storage cart to be empty
+      localStorage.setItem("cart", "{}");
       // Get Stripe.js instance
       const stripe = await stripePromise;
       // When the customer clicks on the button, redirect them to Checkout.
@@ -101,7 +101,6 @@ const ShippingOptions = () => {
     [shippingProperties]
   );
 
-  // TODO: Make sure the page is responsive
   return (
     <>
       <div>
@@ -121,7 +120,7 @@ const ShippingOptions = () => {
       </div>
       <button
         role="link"
-        className="rounded-full border-darkRed border-2 p-3 font-header2 text-darkRed text-sm mb-16 hover:bg-darkRed hover:text-white"
+        className="rounded-full border-darkRed border-2 p-3 font-header2 text-darkRed text-sm hover:bg-darkRed hover:text-white"
         onClick={redirectToCheckout}
       >
         Proceed to Payment
@@ -136,7 +135,7 @@ const CheckoutPage = () => {
       <CartProvider>
         <div id="page-container" className="relative min-h-screen">
           <Header pageTitle={"Checkout"} />
-          <div id="content-wrap" className="pb-20 pt-24 pl-8 pr-8">
+          <div id="content-wrap" className="pb-32 pt-24 pl-8 pr-8">
             <h1 className="font-header2 tracking-wide pb-4">Shipping Method</h1>
             <ShippingOptions />
           </div>

@@ -1,39 +1,22 @@
-import { Row, Col } from 'antd';
-import { graphql, navigate } from 'gatsby';
-import BackgroundImage from 'gatsby-background-image';
-import moment from 'moment';
-import React from 'react';
+import { Row, Col } from "antd";
+import { graphql, navigate } from "gatsby";
+import BackgroundImage from "gatsby-background-image";
+import moment from "moment";
+import React from "react";
 
-import Footer from 'components/footer';
-import Header from 'components/header';
-import LineBreak from 'components/line-break';
-import './blog-page.css';
+import Footer from "components/footer";
+import Header from "components/header";
+import LineBreak from "components/line-break";
+import "./blog-page.css";
 
 export default function BlogPage({ data }) {
   return (
-    <div id="holder" style={{ minHeight: '100%', positive: 'relative' }}>
-      <Header pageTitle={'blog'} />
-      <div
-        id="body"
-        style={{
-          paddingTop: '100px',
-          paddingBottom: '60px',
-        }}
-      >
+    <div id="page-container" className="relative min-h-screen">
+      <Header pageTitle={"blog"} />
+      <div id="content-wrap" className="pb-32 pt-24">
         <Row gutter={[0, 48]}>{renderBlogs(data.allMarkdownRemark.edges)}</Row>
       </div>
-      <div
-        id="footer"
-        className="footerContainer"
-        style={{
-          height: '150px',
-          width: '100%',
-          bottom: 0,
-          position: 'absolute',
-        }}
-      >
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 
@@ -41,7 +24,9 @@ export default function BlogPage({ data }) {
     // 1. Format the date so they are all in the format MM dd, YYYY
     posts.forEach((post) => {
       // Need to add a day, the date stamp is always off by one day (Need to do some more investigation into this issue)
-      let formattedDate = moment.utc(post.node.frontmatter.date).format('MMM D, YYYY');
+      let formattedDate = moment
+        .utc(post.node.frontmatter.date)
+        .format("MMM D, YYYY");
       post.node.frontmatter.date = formattedDate;
     });
 
@@ -54,12 +39,12 @@ export default function BlogPage({ data }) {
             <BackgroundImage
               fluid={featuredImage.childImageSharp.fixed}
               style={{
-                height: '250px',
-                width: '250px',
-                display: 'table-cell',
-                verticalAlign: 'middle',
-                opacity: '0.5 !important',
-                cursor: 'pointer',
+                height: "250px",
+                width: "250px",
+                display: "table-cell",
+                verticalAlign: "middle",
+                opacity: "0.5 !important",
+                cursor: "pointer",
               }}
               onClick={() => {
                 navigate(`/blog/${slug}`);
@@ -67,14 +52,14 @@ export default function BlogPage({ data }) {
             >
               <p
                 style={{
-                  textTransform: 'uppercase',
-                  color: 'white',
-                  fontFamily: 'Montserrat Semibold',
-                  letterSpacing: '2px',
-                  fontSize: '25px',
-                  textAlign: 'center',
-                  paddingLeft: '15px',
-                  paddingRight: '15px',
+                  textTransform: "uppercase",
+                  color: "white",
+                  fontFamily: "Montserrat Semibold",
+                  letterSpacing: "2px",
+                  fontSize: "25px",
+                  textAlign: "center",
+                  paddingLeft: "15px",
+                  paddingRight: "15px",
                 }}
               >
                 {title}
@@ -82,11 +67,11 @@ export default function BlogPage({ data }) {
               <LineBreak width="60px" colour="white" />
               <p
                 style={{
-                  textTransform: 'uppercase',
-                  color: 'white',
-                  fontFamily: 'Montserrat Semibold',
-                  letterSpacing: '2px',
-                  textAlign: 'center',
+                  textTransform: "uppercase",
+                  color: "white",
+                  fontFamily: "Montserrat Semibold",
+                  letterSpacing: "2px",
+                  textAlign: "center",
                 }}
               >
                 {date}
@@ -97,12 +82,12 @@ export default function BlogPage({ data }) {
               role="button"
               tabIndex={0}
               style={{
-                height: '250px',
-                width: '250px',
-                backgroundColor: '#97af97',
-                display: 'table-cell',
-                verticalAlign: 'middle',
-                cursor: 'pointer',
+                height: "250px",
+                width: "250px",
+                backgroundColor: "#97af97",
+                display: "table-cell",
+                verticalAlign: "middle",
+                cursor: "pointer",
               }}
               onClick={() => {
                 navigate(`/blog/${slug}`);
@@ -113,14 +98,14 @@ export default function BlogPage({ data }) {
             >
               <p
                 style={{
-                  textTransform: 'uppercase',
-                  color: 'white',
-                  fontFamily: 'Montserrat Semibold',
-                  letterSpacing: '2px',
-                  fontSize: '25px',
-                  textAlign: 'center',
-                  paddingLeft: '15px',
-                  paddingRight: '15px',
+                  textTransform: "uppercase",
+                  color: "white",
+                  fontFamily: "Montserrat Semibold",
+                  letterSpacing: "2px",
+                  fontSize: "25px",
+                  textAlign: "center",
+                  paddingLeft: "15px",
+                  paddingRight: "15px",
                 }}
               >
                 {title}
@@ -128,11 +113,11 @@ export default function BlogPage({ data }) {
               <LineBreak width="60px" colour="white" />
               <p
                 style={{
-                  textTransform: 'uppercase',
-                  color: 'white',
-                  fontFamily: 'Montserrat Semibold',
-                  letterSpacing: '2px',
-                  textAlign: 'center',
+                  textTransform: "uppercase",
+                  color: "white",
+                  fontFamily: "Montserrat Semibold",
+                  letterSpacing: "2px",
+                  textAlign: "center",
                 }}
               >
                 {date}

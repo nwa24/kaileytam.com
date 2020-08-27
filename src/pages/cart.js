@@ -1,32 +1,17 @@
-import React from 'react';
+import React from "react";
 
-import CartItem from 'components/cart-item';
-import CheckoutButton from 'components/checkout-button';
-import Footer from 'components/footer';
-import Header from 'components/header';
-import { useCartContext, CartProvider } from 'context/cart-provider';
-import { ProductProvider } from 'context/products-provider';
-import { formatPrice } from 'helpers/index';
+import CartItem from "components/cart-item";
+import CheckoutButton from "components/checkout-button";
+import Footer from "components/footer";
+import Header from "components/header";
+import { useCartContext, CartProvider } from "context/cart-provider";
+import { ProductProvider } from "context/products-provider";
+import { formatPrice } from "helpers/index";
 
 function CartListing() {
-  const { cart, count, set, remove } = useCartContext();
+  const { cart, count, set, remove, total } = useCartContext();
 
-  const quantityTotalCost = [];
-  let subTotal = 0;
-
-  if (count > 0) {
-    const { currency } = cart[0][0].price;
-    cart.forEach(([product, quantity]) => {
-      const { unit_amount } = product.price;
-      quantityTotalCost.push(unit_amount * quantity);
-    });
-
-    quantityTotalCost.forEach((totalCost) => {
-      subTotal = subTotal + totalCost;
-    });
-
-    subTotal = formatPrice(subTotal, currency);
-  }
+  const subTotal = formatPrice(total, "cad");
 
   return (
     <>
@@ -49,7 +34,9 @@ function CartListing() {
         <div className="flex justify-end text-right pb-20 lg:pr-24">
           <div className="w-2/3 lg:w-1/6 pr-8 pt-4">
             <p className="font-body text-darkGreen text-sm">Subtotal</p>
-            <p className="font-header2 text-darkGreen font-semibold">{subTotal}</p>
+            <p className="font-header2 text-darkGreen font-semibold">
+              {subTotal}
+            </p>
             <p className="font-body text-darkGreen text-xs">
               Taxes and shipping calculated at checkout
             </p>
@@ -66,8 +53,8 @@ export default function CartPage() {
     <ProductProvider>
       <CartProvider>
         <div id="page-container" className="relative min-h-screen">
-          <Header pageTitle={'Cart'} />
-          <div id="content-wrap" className="pb-20 pt-24">
+          <Header pageTitle={"Cart"} />
+          <div id="content-wrap" className="pb-32 pt-24">
             <CartListing />
           </div>
           <Footer />
