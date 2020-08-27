@@ -1,12 +1,12 @@
-import Img from 'gatsby-image';
-import React, { useRef } from 'react';
+import Img from "gatsby-image";
+import React, { useRef } from "react";
 
-import Footer from 'components/footer';
-import Header from 'components/header';
-import { useCartContext } from 'context/cart-provider';
-import { useProductContext } from 'context/products-provider';
-import { formatPrice } from 'helpers/index';
-import { navigate } from 'gatsby';
+import Footer from "components/footer";
+import Header from "components/header";
+import { useCartContext } from "context/cart-provider";
+import { useProductContext } from "context/products-provider";
+import { formatPrice } from "helpers/index";
+import { navigate } from "gatsby";
 
 export default function ProductPage({ productId }) {
   const { products } = useProductContext();
@@ -22,13 +22,22 @@ export default function ProductPage({ productId }) {
   return (
     <div id="page-container" className="relative min-h-screen">
       <Header pageTitle={name} />
-      <div id="content-wrap" className="pb-20 pt-24 flex justify-evenly flex-wrap">
+      <div
+        id="content-wrap"
+        className="pb-20 pt-24 flex justify-evenly flex-wrap"
+      >
         <div className="w-full lg:w-2/6 px-2 ml-auto">
-          <Img fluid={localFiles[0].childImageSharp.fluid} alt={name} />
+          {localFiles && (
+            <Img fluid={localFiles[0].childImageSharp.fluid} alt={name} />
+          )}
         </div>
         <div className="w-full lg:w-2/6 px-2 mr-auto">
-          <div className="font-header1 text-darkGreen tracking-widest text-4xl">{name}</div>
-          <div className="font-header2 text-darkRed tracking-widest text-2xl">{price}</div>
+          <div className="font-header1 text-darkGreen tracking-widest text-4xl">
+            {name}
+          </div>
+          <div className="font-header2 text-darkRed tracking-widest text-2xl">
+            {price}
+          </div>
           <div className="font-body text-darkGreen text-lg pb-8">
             Shipping is calculated at checkout
           </div>
@@ -47,7 +56,7 @@ export default function ProductPage({ productId }) {
             }}
             disabled={!available(id)}
           >
-            {available(id) ? 'Add To Cart' : 'Sold Out'}
+            {available(id) ? "Add To Cart" : "Sold Out"}
           </button>
           <div className="font-body text-black pb-20">{description}</div>
         </div>

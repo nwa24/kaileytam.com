@@ -6,8 +6,8 @@ module.exports.handler = async (event, context, callback) => {
     payment_method_types: ["card"],
     line_items: JSON.parse(event.body),
     mode: "payment",
-    success_url: "http://localhost:8888",
-    cancel_url: "http://localhost:8888/checkout",
+    success_url: "http://localhost:8888", // Need to update this once it's deployed to production
+    cancel_url: "http://localhost:8888/checkout", // Need to update this once it's deployed to production
     shipping_address_collection: {
       allowed_countries: ["US", "CA"],
     },
