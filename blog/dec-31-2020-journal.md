@@ -1,6 +1,6 @@
 ---
 date: 2021-01-27
-title: "Dec. 31, 2020: Journal"
+title: "Journal: Dec. 31, 2020"
 featuredImage: /assets/img_20210126_165547_701.jpg
 ---
 **Good night to one of the shittiest years in recent history.** Good night to a year's worth of trauma, to the culmination of powerful people making selfish decisions. Good night to the consequences of hate and bigotry and xenophobia and racism and sexism.
