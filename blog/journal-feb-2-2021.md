@@ -3,6 +3,7 @@ date: 2021-02-02
 title: "journal: feb. 2, 2021"
 featuredImage: /assets/0002_0a.jpg
 ---
+<br/>
 **For me, identity is fluctuating, changing, overlapping, multiple.** For some reason, we really like labelling people, categorizing them to fit all-too-small boxes in our all-too-small minds. I'm guilty of this. It's easier to think of someone as an irredeemable, unchanging, unforgivable son-of-a-bitch rather than someone capable of contradiction, complexity, growth*—*someone just like me. It's easy to pick out one facet of someone's identity and generalize the rest*—*for better, but usually for worse.
 
 What do I identify as? As I list these out, I have a sense of fear within me*—*will I be overdetermined, essentialized, boiled down to a few words that may or may not change in the future? Will these words immortalize me as something that I eventually grow away from?
