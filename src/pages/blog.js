@@ -39,7 +39,7 @@ const blog = ({ data }) => {
           height: "150px",
           width: "100%",
           bottom: 0,
-          position: "absolute",
+          position: "fixed",
         }}
       >
         <Footer />
