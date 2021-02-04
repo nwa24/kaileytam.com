@@ -11,7 +11,15 @@ import "./blog-page.css"
 
 const blog = ({ data }) => {
   return (
-    <div id="holder" style={{ minHeight: "100%", positive: "relative" }}>
+    <div
+      id="holder"
+      style={{
+        minHeight: "100%",
+        positive: "relative",
+        display: "block",
+        paddingBottom: "150px",
+      }}
+    >
       <Helmet>
         <style>
           {
@@ -38,8 +46,7 @@ const blog = ({ data }) => {
         style={{
           height: "150px",
           width: "100%",
-          bottom: 0,
-          position: "fixed",
+          position: "absolute",
         }}
       >
         <Footer />
