@@ -1,6 +1,6 @@
 ---
 date: 2020-07-29
-title: "the process: clouds hang low/anticipation"
+title: "the process: clouds hang/ anticipation"
 featuredImage: /assets/clouds-hang-v5-cropped.jpg
 ---
 
