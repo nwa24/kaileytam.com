@@ -13,7 +13,7 @@ Here's where we end the year and begin the next: I feel quite hopeless. Quite in
 
 I'm sitting at my desk*—*the same desk I've been spending eighty percent of my waking hours in*—*undressed, face and skin routine half-done, hair pulled back in some embarrassingly greasy mess. My hand is cramping. And so, I will ask the same question I have been asking all year: *what the fuck am I doing here?*
 
-<img src="/assets/pxl_20201107_235547478.jpg" width="800" style="display: block; margin-left: auto; margin-right: auto; max-width: 100%"/>
+<img src="/assets/pxl_20201107_235547478.jpg" width="400" style="display: block; margin-left: auto; margin-right: auto; max-width: 100%"/>
 <br/>
 
 **It's raining quite hard outside.** I can hear it on the roof, trickling down the pipes, splattering on the windows and balcony. I suppose that will hopefully discourage the partiers from setting off fireworks and hosting illegal gatherings amidst a fucking pandemic. 
