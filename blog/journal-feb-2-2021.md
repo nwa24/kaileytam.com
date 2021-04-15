@@ -13,7 +13,7 @@ Right now, I identify as an Asian woman (she/her/hers) of Chinese descent, a wri
 
 The last few years of my life has felt like trying to zip up my high school prom dress. The zipper slides smoothly up and up until it snags right at my waistline. I can suck in my stomach, contort my body this way and that, but at the end of it all, I just end up a little sweaty, a little disappointed, and a little demoralized.
 
-<img src="/assets/rcsgrad18-264.jpg" width="500" style="display: block; margin-left: auto; margin-right: auto; max-width: 100%"/>
+<img src="/assets/rcsgrad18-264.jpg" width="400" style="display: block; margin-left: auto; margin-right: auto; max-width: 100%"/>
 <br/> 
 
 **It feels like impostor syndrome to try and belong in the same places I used to belong.** For much of my life, maybe even now still, I have been set on a pedestal, an example for my peers. I was given a mic and a voice and a pen. I was told which words to say and I was praised when I said them. I can't deny the privilege that has brought me, the doors that has opened, the trust I've been bestowed. But I'd be lying if I said it hadn't also crippled my self-esteem, given me a severe case of perfectionism, and made me doubt everything I've ever learned.
@@ -26,7 +26,7 @@ Growing up, I was told that my identity is that of a child of God, that my ident
 
 The idea that my identity is simply given to me by the divine, that being a child of God obscures and supersedes all my other identities, doesn't sit right with me anymore. Can it really be that simple? I believe identity is crafted relationally*—*sure, we must create identity for ourselves, but we have to get our language, and therefore our constructions of identity, from somewhere. If identity is crafted in a dialectic, in a wrestling (one of the most overused words in some Christian traditions), then being simply who God says I am doesn't seem like enough anymore. I don't think God would hand over the answer to my identity crisis that easily anyway.
 
-<img src="/assets/img_20200605_151523.jpg" width="500" style="display: block; margin-left: auto; margin-right: auto; max-width: 100%"/>
+<img src="/assets/img_20200605_151523.jpg" width="400" style="display: block; margin-left: auto; margin-right: auto; max-width: 100%"/>
 <br/> 
 
 **I'm a product of the attitudes, values, and beliefs of my family, my education(s), my friends, the church I grew up in, and what I've chosen to accept and reject from these institutions.** Human identity shifts and expands*—*Abram is renamed Abraham, Jacob is renamed Israel, Sarai is renamed Sarah, Saul is renamed Paul. And even though God does a lot of the renaming, it was always in the context of wrestling, transformation, the willingness to go and believe.
