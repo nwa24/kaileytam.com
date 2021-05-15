@@ -3,11 +3,11 @@ date: 2021-04-14
 title: a recurring dream
 featuredImage: /assets/pxl_20210414_224711934.jpg
 ---
-**I keep dreaming of you**.White sheets and a glass window. The late afternoon sun seeps into the room and we wear nothing but each other. 
+**I keep dreaming of you**. White sheets and a glass window. The late afternoon sun seeps into the room and we wear nothing but each other. 
 
 The dream always starts here. In bed. You tuck my hair behind my ear. "Your morning breath is atrocious," I say. We kiss anyway.
 
-The dream shifts. Sometimes it shifts to foggy bathroom mirrors and fighting for counterspace. Sometimes the scene moves to the, where we move in synchronized chaos. "Where's the milk?" "Pass me a fork." "Get it yourself." 
+The dream shifts. Sometimes it shifts to foggy bathroom mirrors and fighting for counterspace. Sometimes the scene moves to the kitchen, where we move in synchronized chaos. "Where's the milk?" "Pass me a fork." "Get it yourself." 
 
 Always, there is music playing.
 
